@@ -24,9 +24,7 @@
 
 ## 样例
 
-见 [`aow4-bd-design/examples/`](aow4-bd-design/examples/)。
-
-当前示例：[重商海图小妖精](aow4-bd-design/examples/重商海图小妖精.md)。
+[重商海图小妖精](aow4-bd-design/examples/重商海图小妖精.md)。
 
 ## 协议
 
