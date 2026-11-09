@@ -1,0 +1,47 @@
+# 密钥与敏感信息
+.env
+.env.*
+!.env.example
+*.key
+*.token
+*.pem
+*.pfx
+*.p12
+id_rsa*
+*credentials*
+*secret*
+
+# 依赖目录
+node_modules/
+__pycache__/
+.venv/
+
+# 构建产物
+dist/
+build/
+out/
+
+# 素材包与本地截图
+素材/
+素材包/
+assets-pack/
+screenshots/
+截图/
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+Screenshot*.png
+Screenshot*.jpg
+屏幕截图*
+
+# 操作系统 / 编辑器垃圾
+Thumbs.db
+Desktop.ini
+.DS_Store
+~$*
+*.tmp
+*.log
+.vscode/
+.idea/
