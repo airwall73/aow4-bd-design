@@ -29,15 +29,7 @@ out/
 素材包/
 assets-pack/
 screenshots/
-截图/
-*.zip
-*.rar
-*.7z
-*.tar
-*.tar.gz
-Screenshot*.png
-Screenshot*.jpg
-屏幕截图*
+
 
 # 操作系统 / 编辑器垃圾
 Thumbs.db
