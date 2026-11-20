@@ -1,6 +1,6 @@
 # 单位攻击技能标签表
 
-由 `references/data/` 的 Units.json + Abilities.json 自动生成（官网 2026-10-27 版，生成脚本 `data/build_tables.py`）。
+由 `references/data/` 的 Units.json + Abilities.json 自动生成（官网 19 Nov 2026 版，生成脚本 `data/build_tables.py`）。
 标签含义：**基础**=基础攻击；**单击**=单击攻击（Single Shot，享受单击攻击增强）；**重复**=repeating attack（多段攻击，无单击标签）。
 只收录攻击类技能（有伤害或带基础/重复标记）；防御模式、纯被动不列出。同名单位为不同文化变体，以括号内id区分。
 

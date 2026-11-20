@@ -1,6 +1,6 @@
 # DLC与万神殿归属表
 
-由 `references/data/` 自动生成（官网 2026-10-27 版，生成脚本 `data/build_tables.py`）。未列出的条目=本体内容。
+由 `references/data/` 自动生成（官网 19 Nov 2026 版，生成脚本 `data/build_tables.py`）。未列出的条目=本体内容。
 万神殿列为**推断**：数据无显式万神殿字段，用 `front_end:false`（不在派系创建默认列表显示）推断；已核对个人崇拜、魔法成瘾、治安骑士、地下社会、残忍贩奴者等用户确认的万神殿特性，全部符合。FactionCreation无中文版，文化/领袖名以英文为准。
 
 ## DLC代码对照

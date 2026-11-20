@@ -1,13 +1,19 @@
 {
-  "official_updated": "27 Oct 2026",
-  "official_updated_iso": "2026-10-27",
-  "user_rules_updated_iso": "2026-11-10",
+  "official_updated": "19 Nov 2026",
+  "official_updated_iso": "2026-11-19",
+  "user_rules_updated_iso": "2026-11-20",
+  "last_checked_iso": "2026-11-20",
   "source": "https://minionsart.github.io/aow4db/",
   "snapshot": "curated-text-only",
   "icons": false,
-  "raw_data": "references/data/（EN+ZH官网JSON，2026-10-27版）",
+  "raw_data": "references/data/（EN、ZH 与 GEN 官网文字 JSON，2026-11-19 版）",
   "distilled_tables": [
     "references/unit-attack-tags.md",
-    "references/dlc-pantheon.md"
-  ]
+    "references/dlc-pantheon.md",
+    "references/unit-index.md",
+    "references/cultures.md",
+    "references/enchant-details.md",
+    "references/tome-summaries.md"
+  ],
+  "last_seen_official_iso": "2026-11-19"
 }

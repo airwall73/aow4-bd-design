@@ -1,0 +1,542 @@
+# 单位索引表
+
+由 `references/data/` 自动生成（官网 19 Nov 2026 版，生成脚本 `data/build_tables.py`）。
+用途：候选兵种的系统枚举与核心单位的二次核对，按类型标签 Grep 本表，不必每次扫描原始 Units.json。
+
+列含义：名称 | 来源 | 标签 | 面板 | 造价/维护 | DLC。
+- 标签来自 Units.json `secondary_passives`（附魔资格判定只认这些标签）；纯移动/伪装类已剔除；飞行/漂浮带 `*` 前缀。
+- 来源：文化兵=文化（-亚文化）；魔典兵=所属魔典；召唤物=召唤法术（所属魔典）；其余=其他（野怪、塔楼、事件兵等）。
+- 维护费中 influence 字段按帝权处理（与募役版一致）；**召唤版的法力维护不在 Units.json，需另查召唤法术与既有备注**（召唤/募役维护费可能不同）。
+- 面板=生命/防/抗/状态抗；单项防护抗性明细仍需回原始数据。
+- **数据无“种族单位”字段**，种族判断沿用既有规则（文化兵与部分魔典兵为种族单位；动物/构装体/亡灵/元素/魔法起源召唤物等通常非种族）。
+- 同名单位为不同文化变体，以括号内 id 区分；已剔除 DEPRECATED 单位。文化/亚文化名为数据原文，译名以 FactionCreator 页面为准。
+- 原始数据更新后必须重跑 `data/build_tables.py` 再生本表，否则以原始 Units.json 为准。
+
+
+## T1
+- 受诅之雾灵 Accursed Wisp | 其他 | 受诅恶魔/战斗法师单位/灵体/*漂浮/魔法起源 | 35命/0防/2抗/0状抗 | 造价80产+60金 维护8金 | The Silver Seas 白银之海
+- 活体火焰剑 Animated Fire Sword | 其他 | 构装体/斗士单位/*漂浮 | 60命/1防/0抗/0状抗 | 造价80产+60金 维护8金 | Giant Kings 巨人国王
+- 活体冰霜剑 Animated Frost Sword | 其他 | 构装体/斗士单位/*漂浮 | 60命/1防/0抗/0状抗 | 造价80产+60金 维护8金 | Giant Kings 巨人国王
+- 活体闪电剑 Animated Lightning Sword | 其他 | 构装体/斗士单位/*漂浮 | 60命/1防/0抗/0状抗 | 造价80产+60金 维护8金 | Giant Kings 巨人国王
+- 活体剑 Animated Sword | 其他 | 构装体/斗士单位/*漂浮 | 60命/1防/0抗/0状抗 | 造价80产+60金 维护8金 | Giant Kings 巨人国王
+- 铁砧守卫 Anvil Guard | 文化:勤勉 | 护盾单位 | 70命/5防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 强弩手 Arbalest | 文化:勤勉 | 候选骑兵/远程单位 | 55命/1防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 奥术守卫 Arcane Guard（arcane_guard） | 文化:神奥-调谐 | 长柄武器单位 | 70命/2防/1抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 奥术守卫 Arcane Guard（arcane_guard） | 文化:神奥-潜能 | 长柄武器单位 | 70命/2防/1抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 奥术守卫 Arcane Guard（arcane_guard） | 文化:神奥-召唤 | 长柄武器单位 | 70命/2防/1抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 奥术师 Arcanist（arcanist） | 文化:神奥-调谐 | 战斗法师单位 | 45命/0防/2抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 奥术师 Arcanist（arcanist） | 文化:神奥-潜能 | 战斗法师单位 | 45命/0防/2抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 奥术师 Arcanist（arcanist） | 文化:神奥-召唤 | 战斗法师单位 | 45命/0防/2抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 射手 Archer（archer） | 文化:封建-帝君 | 远程单位 | 55命/0防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 射手 Archer（archer） | 文化:封建-世家 | 远程单位 | 55命/0防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 星辰守护 Astral Ward | 召唤:召唤星辰守护 Conjure Astral Ward（秘术 - 召唤学派(T0)） | 魔法起源/塔楼 | 25命/0防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 星辰小精灵 Astral Wisp | 召唤:星辰小精灵仪式 Astral Wisp Ritual | 战斗法师单位/灵体/*漂浮/魔法起源 | 45命/0防/2抗/0状抗 | 造价90产+70金 维护8金 | 本体
+- 鲜血蛆虫 Blood Maggot | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/斗士单位 | 50命/0防/0抗/0状抗 | 造价90产+70金 维护8金 | Thrones of Blood 鲜血王座
+- 城邦行舰 City Barge | 其他 | *漂浮 | 160命/0防/0抗/0状抗 | 造价200产+200金+1人口 维护8金 | Rise from Ruin 废墟崛起
+- 黄铜魔像 Copper Golem | 召唤:召唤黄铜魔像 Summon Copper Golem（附魔魔典(T1)） | 构装体/进化/长柄武器单位 | 70命/3防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 鳄鱼 Crocodile | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/斗士单位 | 65命/1防/0抗/0状抗 | 造价80产+60金 维护8金 | Primal Fury 原初之怒
+- 培育者 Cultivator（cultivator） | 文化:建筑师-秩序建筑师 | 候选骑兵/支援单位 | 50命/0防/2抗/2状抗 | 造价80产+60金 维护8金 | Archon Prophecy 执政官预言
+- 培育者 Cultivator（cultivator） | 文化:建筑师-混沌建筑师 | 候选骑兵/支援单位 | 50命/0防/2抗/2状抗 | 造价80产+60金 维护8金 | Archon Prophecy 执政官预言
+- 培育者 Cultivator（cultivator） | 文化:建筑师-星辰建筑师 | 候选骑兵/支援单位 | 50命/0防/2抗/2状抗 | 造价80产+60金 维护8金 | Archon Prophecy 执政官预言
+- 培育者 Cultivator（cultivator） | 文化:建筑师-物质建筑师 | 候选骑兵/支援单位 | 50命/0防/2抗/2状抗 | 造价80产+60金 维护8金 | Archon Prophecy 执政官预言
+- 培育者 Cultivator（cultivator） | 文化:建筑师-自然建筑师 | 候选骑兵/支援单位 | 50命/0防/2抗/2状抗 | 造价80产+60金 维护8金 | Archon Prophecy 执政官预言
+- 培育者 Cultivator（cultivator） | 文化:建筑师-暗影建筑师 | 候选骑兵/支援单位 | 50命/0防/2抗/2状抗 | 造价80产+60金 维护8金 | Archon Prophecy 执政官预言
+- 黎明守卫 Dawn Defender | 文化:至高 | 候选骑兵/护盾单位 | 75命/5防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 衰朽僵尸 Decaying Zombie | 召唤:死亡刻记 Marked for Death（死神魔典(T4)） | 斗士单位/魔法起源/亡灵 | 60命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | 本体
+- 守卫 Defender（defender） | 文化:封建-世家 | 候选骑兵/护盾单位 | 70命/5防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 守卫 Defender（defender） | 文化:封建-帝君 | 候选骑兵/护盾单位 | 70命/5防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 末日蝙蝠 Doom Bat | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/斗士单位/*飞行/亡灵 | 60命/0防/0抗/0状抗 | 造价80产+60金 维护8金 | Thrones of Blood 鲜血王座
+- 恐惧蜘蛛幼崽 Dread Spider Hatchling | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/进化/斗士单位/蜘蛛 | 60命/2防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 沙舟骑手 Dunerider（dunerider） | 文化:游牧民-清道夫 | 骑兵/远程单位/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Rise from Ruin 废墟崛起
+- 沙舟骑手 Dunerider（dunerider） | 文化:游牧民-征服者 | 骑兵/远程单位/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Rise from Ruin 废墟崛起
+- 黄昏猎手 Dusk Hunter | 文化:至高 | 远程单位 | 55命/0防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 碎地者 Earthbreaker（earthbreaker） | 文化:建筑师-秩序建筑师 | 冲击单位 | 75命/3防/0抗/0状抗 | 造价80产+60金 维护8金 | Archon Prophecy 执政官预言
+- 碎地者 Earthbreaker（earthbreaker） | 文化:建筑师-混沌建筑师 | 冲击单位 | 75命/3防/0抗/0状抗 | 造价80产+60金 维护8金 | Archon Prophecy 执政官预言
+- 碎地者 Earthbreaker（earthbreaker） | 文化:建筑师-星辰建筑师 | 冲击单位 | 75命/3防/0抗/0状抗 | 造价80产+60金 维护8金 | Archon Prophecy 执政官预言
+- 碎地者 Earthbreaker（earthbreaker） | 文化:建筑师-物质建筑师 | 冲击单位 | 75命/3防/0抗/0状抗 | 造价80产+60金 维护8金 | Archon Prophecy 执政官预言
+- 碎地者 Earthbreaker（earthbreaker） | 文化:建筑师-自然建筑师 | 冲击单位 | 75命/3防/0抗/0状抗 | 造价80产+60金 维护8金 | Archon Prophecy 执政官预言
+- 碎地者 Earthbreaker（earthbreaker） | 文化:建筑师-暗影建筑师 | 冲击单位 | 75命/3防/0抗/0状抗 | 造价80产+60金 维护8金 | Archon Prophecy 执政官预言
+- 缠绕仆役 Entwined Thrall | 召唤:森林苏醒 Awaken the Forest（自然之怒魔典(T4)） | 进化/植物/散兵单位 | 65命/2防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 使者 Envoy | 文化:重商-男爵领地 | 候选骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | The Silver Seas 白银之海
+- 暮光精灵 Evening Sprite | 召唤:召唤精灵 Summon Sprite（精灵魔典(T1)） | 战斗法师单位/进化/仙灵/*飞行/魔法起源 | 50命/0防/2抗/0状抗 | 造价80产+60法力 维护8金 | Secrets of the Archmages 大法师之秘
+- 血肉灵 Fleshling | 其他 | 斗士单位/魔法起源/幽影恶魔 | 20命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Eldritch Realms 诡秘领域
+- 湮裂蝮蛇 Fractured Serpent | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/灵体/斗士单位 | 50命/1防/1抗/0状抗 | 造价80产+60金 维护8金 | Rise from Ruin 废墟崛起
+- 狂鱼群 Frenzied Fish Swarm | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/斗士单位 | 70命/0防/0抗/0状抗 | 造价80产+60金 维护8金 | The Silver Seas 白银之海
+- 巨型甲虫 Giant Beetle | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/进化/斗士单位 | 60命/2防/0抗/0状抗 | 造价80产+60金 维护8金 | Eldritch Realms 诡秘领域
+- 贪食小鬼 Gluttonous Imp | 召唤:召唤贪食小鬼 Summon Gluttonous Imp（暴食魔典(T1)） | *飞行/地狱恶魔/魔法战士单位/魔法起源 | 65命/2防/2抗/0状抗 | 造价80产+60金 维护8金 | Secrets of the Archmages 大法师之秘
+- 打手 Goon | 文化:重商-卡特尔 | 斗士单位 | 60命/2防/0抗/0状抗 | 造价80产+60金 维护8金 | The Silver Seas 白银之海
+- 血獠兽幼崽 Goretusk Piglet | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/进化/冲击单位 | 65命/1防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 利嘴鸦 Grimbeak Crow | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/斗士单位/*飞行 | 60命/0防/0抗/0状抗 | 造价120产+100金 维护8金 | 本体
+- 劫掠者 Harrier | 文化:掠夺者-帝国 | 散兵单位 | 60命/2防/0抗/0状抗 | 造价80产+60金 维护8金 | Empires & Ashes 帝国与灰烬
+- 雇工 Hireling（hireling） | 文化:重商-卡特尔 | 候选骑兵/远程单位 | 55命/0防/0抗/0状抗 | 造价80产+60金 维护8金 | The Silver Seas 白银之海
+- 雇工 Hireling（hireling） | 文化:重商-男爵领地 | 候选骑兵/远程单位 | 55命/0防/0抗/0状抗 | 造价80产+60金 维护8金 | The Silver Seas 白银之海
+- 荣耀之刃 Honor Blade（honor_blade） | 文化:负誓者-正义 | 斗士单位/候选骑兵 | 70命/3防/1抗/0状抗 | 造价80产+60金 维护8金 | Ways of War 战争之道
+- 荣耀之刃 Honor Blade（honor_blade） | 文化:负誓者-和谐 | 斗士单位/候选骑兵 | 70命/3防/1抗/0状抗 | 造价80产+60金 维护8金 | Ways of War 战争之道
+- 荣耀之刃 Honor Blade（honor_blade） | 文化:负誓者-争斗 | 斗士单位/候选骑兵 | 70命/3防/1抗/0状抗 | 造价80产+60金 维护8金 | Ways of War 战争之道
+- 不朽者 Immortal（immortal） | 文化:黑暗-暴政教派 | 冲击单位 | 75命/2防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 不朽者 Immortal（immortal） | 文化:黑暗-死亡教派 | 冲击单位 | 75命/2防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 地狱幼犬 Inferno Puppy | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/进化/地狱恶魔/魔法战士单位/魔法起源 | 60命/1防/1抗/0状抗 | 造价80产+60法力 维护8金 | 本体
+- 线人 Informant | 文化:重商-卡特尔 | 候选骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | The Silver Seas 白银之海
+- 钢铁魔像助手 Iron Golem Assistant | 其他 | 构装体/斗士单位 | 60命/2防/1抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 次级光明精灵 Lesser Light Spirit | 召唤:召唤次级光之灵体 Summon Lesser Light Spirit（信仰魔典(T1)） | 神族/元素/进化/*漂浮/魔法起源/支援单位 | 50命/0防/2抗/2状抗 | 造价80产+60法力 维护8金 | 本体
+- 次级岩浆之灵 Lesser Magma Spirit | 召唤:元素召唤 Conjure Elemental | 战斗法师单位/元素/进化/*漂浮/魔法起源 | 50命/0防/2抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 次级霜雪之灵 Lesser Snow Spirit | 召唤:元素召唤 Conjure Elemental | 元素/进化/*漂浮/魔法战士单位/魔法起源 | 60命/1防/1抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 次级岩石之灵 Lesser Stone Spirit | 召唤:元素召唤 Conjure Elemental | 元素/进化/*漂浮/魔法起源/护盾单位 | 65命/4防/1抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 次级风暴之灵 Lesser Storm Spirit | 召唤:元素召唤 Conjure Elemental | 元素/进化/*漂浮/魔法起源/冲击单位 | 50命/2防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 次级潮汐之灵 Lesser Tide Spirit | 召唤:召唤次级潮汐之灵 Summon Lesser Tide Spirit（水法术魔典(T1)） | 元素/进化/斗士单位/*漂浮/魔法起源 | 80命/1防/1抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 寻光者 Lightseeker | 文化:至高 | 骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | 本体
+- 利塞罗石怪 - 核心 Lithorine Core | 魔典:水晶契约(T0) | 元素/*漂浮/魔法起源/支援单位 | 60命/0防/2抗/2状抗 | 造价80产+60法力 维护8金 | Giant Kings 巨人国王
+- 活体藤蔓 Living Vine | 召唤:藤蔓囚笼 Vine Prison（根须魔典(T1)） | 斗士单位/魔法起源/植物 | 1命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | 本体
+- 拾荒者 Looter | 文化:游牧民-清道夫 | 候选骑兵/散兵单位 | 55命/2防/0抗/0状抗 | 造价80产+60金 维护8金 | Rise from Ruin 废墟崛起
+- 水兵 Marine | 文化:重商-男爵领地 | 护盾单位 | 70命/5防/0抗/0状抗 | 造价80产+60金 维护8金 | The Silver Seas 白银之海
+- 成熟分裂灵 Mature Splitterling | 其他 | 斗士单位/魔法起源/幽影恶魔 | 50命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Eldritch Realms 诡秘领域
+- 雇佣兵 Mercenary（mercenary） | 文化:掠夺者-帝国 | 长柄武器单位 | 80命/3防/1抗/0状抗 | 造价80产+60金 维护8金 | Empires & Ashes 帝国与灰烬
+- 雇佣兵 Mercenary（mercenary） | 文化:掠夺者-联邦 | 长柄武器单位 | 80命/3防/1抗/0状抗 | 造价80产+60金 维护8金 | Empires & Ashes 帝国与灰烬
+- 民兵 Militia（militia） | 文化:封建-帝君 | 长柄武器单位 | 70命/1防/0抗/0状抗 | 造价60产+50金 维护8金 | 本体
+- 民兵 Militia（militia） | 文化:封建-世家 | 长柄武器单位 | 70命/1防/0抗/0状抗 | 造价60产+50金 维护8金 | 本体
+- 晨光精灵 Morning Sprite | 召唤:召唤精灵 Summon Sprite（精灵魔典(T1)） | 进化/仙灵/*飞行/魔法起源/支援单位 | 50命/0防/2抗/2状抗 | 造价80产+60法力 维护8金 | Secrets of the Archmages 大法师之秘
+- 神奥投影 Mystic Projection（mystic_projection） | 文化:神奥-调谐 | 灵体/*漂浮/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | 本体
+- 神奥投影 Mystic Projection（mystic_projection） | 文化:神奥-潜能 | 灵体/*漂浮/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | 本体
+- 神奥投影 Mystic Projection（mystic_projection） | 文化:神奥-召唤 | 灵体/*漂浮/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | 本体
+- 观测者 Observer（observer） | 文化:掠夺者-帝国 | 构装体/*飞行/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Empires & Ashes 帝国与灰烬
+- 观测者 Observer（observer） | 文化:掠夺者-联邦 | 构装体/*飞行/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Empires & Ashes 帝国与灰烬
+- 侍从骑手 Outrider（outrider） | 文化:黑暗-暴政教派 | 骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | 本体
+- 侍从骑手 Outrider（outrider） | 文化:黑暗-死亡教派 | 骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | 本体
+- 寻路者 Pathfinder | 文化:蛮族 | 骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | 本体
+- 幻影战士 Phantasm Warrior | 召唤:召唤幻影战士 Summon Phantasm Warrior（守卫魔典(T1)） | 灵体/*漂浮/魔法起源/护盾单位 | 60命/3防/2抗/0状抗 | 造价80产+60法力 维护8金 | 本体
+- 先锋战士 Pioneer | 文化:勤勉 | 骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | 本体
+- 手枪手 Pistoleer | 文化:掠夺者-联邦 | 候选骑兵/散兵单位 | 60命/2防/0抗/0状抗 | 造价80产+60金 维护8金 | Empires & Ashes 帝国与灰烬
+- 原初投手 Primal Darter（primal_darter） | 文化:原初-泥潭鳄鱼 | 远程单位 | 60命/1防/1抗/0状抗 | 造价80产+60金 维护8金 | Primal Fury 原初之怒
+- 原初投手 Primal Darter（primal_darter） | 文化:原初-风暴乌鸦 | 远程单位 | 60命/1防/1抗/0状抗 | 造价80产+60金 维护8金 | Primal Fury 原初之怒
+- 原初投手 Primal Darter（primal_darter） | 文化:原初-冰川猛犸 | 远程单位 | 60命/1防/1抗/0状抗 | 造价80产+60金 维护8金 | Primal Fury 原初之怒
+- 原初投手 Primal Darter（primal_darter） | 文化:原初-烬剑齿虎 | 远程单位 | 60命/1防/1抗/0状抗 | 造价80产+60金 维护8金 | Primal Fury 原初之怒
+- 原初投手 Primal Darter（primal_darter） | 文化:原初-沙丘巨蟒 | 远程单位 | 60命/1防/1抗/0状抗 | 造价80产+60金 维护8金 | Primal Fury 原初之怒
+- 原初投手 Primal Darter（primal_darter） | 文化:原初-隧行蜘蛛 | 远程单位 | 60命/1防/1抗/0状抗 | 造价80产+60金 维护8金 | Primal Fury 原初之怒
+- 原初投手 Primal Darter（primal_darter） | 文化:原初-森灵之狼 | 远程单位 | 60命/1防/1抗/0状抗 | 造价80产+60金 维护8金 | Primal Fury 原初之怒
+- 捍卫者 Protector（protector） | 文化:原初-泥潭鳄鱼 | 候选骑兵/护盾单位 | 70命/5防/0抗/0状抗 | 造价80产+60金 维护8金 | Primal Fury 原初之怒
+- 捍卫者 Protector（protector） | 文化:原初-风暴乌鸦 | 候选骑兵/护盾单位 | 70命/5防/0抗/0状抗 | 造价80产+60金 维护8金 | Primal Fury 原初之怒
+- 捍卫者 Protector（protector） | 文化:原初-冰川猛犸 | 候选骑兵/护盾单位 | 70命/5防/0抗/0状抗 | 造价80产+60金 维护8金 | Primal Fury 原初之怒
+- 捍卫者 Protector（protector） | 文化:原初-烬剑齿虎 | 候选骑兵/护盾单位 | 70命/5防/0抗/0状抗 | 造价80产+60金 维护8金 | Primal Fury 原初之怒
+- 捍卫者 Protector（protector） | 文化:原初-沙丘巨蟒 | 候选骑兵/护盾单位 | 70命/5防/0抗/0状抗 | 造价80产+60金 维护8金 | Primal Fury 原初之怒
+- 捍卫者 Protector（protector） | 文化:原初-隧行蜘蛛 | 候选骑兵/护盾单位 | 70命/5防/0抗/0状抗 | 造价80产+60金 维护8金 | Primal Fury 原初之怒
+- 捍卫者 Protector（protector） | 文化:原初-森灵之狼 | 候选骑兵/护盾单位 | 70命/5防/0抗/0状抗 | 造价80产+60金 维护8金 | Primal Fury 原初之怒
+- 逐猎者 Pursuer（pursuer） | 文化:黑暗-暴政教派 | 候选骑兵/远程单位 | 55命/0防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 逐猎者 Pursuer（pursuer） | 文化:黑暗-死亡教派 | 候选骑兵/远程单位 | 55命/0防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 突袭者 Raider | 文化:游牧民-征服者 | 候选骑兵/冲击单位 | 75命/3防/0抗/0状抗 | 造价80产+60金 维护8金 | Rise from Ruin 废墟崛起
+- 斥候 Scout（scout） | 文化:封建-帝君 | 骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | 本体
+- 斥候 Scout（scout） | 文化:封建-世家 | 骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | 本体
+- 骷髅射手 Skeleton Archer | 召唤:亡者大军 Raise Undead Army（永世君王魔典(T5)） | 魔法起源/远程单位/亡灵 | 50命/0防/0抗/0状抗 | 造价35产+10魂 维护8金 | 本体
+- 骷髅法师 Skeleton Mage | 召唤:亡者大军 Raise Undead Army（永世君王魔典(T5)） | 战斗法师单位/魔法起源/亡灵 | 40命/0防/2抗/0状抗 | 造价35产+10魂 维护8金 | 本体
+- 骷髅民兵 Skeleton Militia | 召唤:亡者大军 Raise Undead Army（永世君王魔典(T5)） | 魔法起源/长柄武器单位/亡灵 | 60命/2防/0抗/0状抗 | 造价35产+10魂 维护8金 | 本体
+- 骷髅勇士 Skeleton Warrior | 召唤:亡者大军 Raise Undead Army（永世君王魔典(T5)） | 魔法起源/护盾单位/亡灵 | 55命/5防/0抗/0状抗 | 造价35产+10魂 维护8金 | 本体
+- 蹒跚幼体 Slither Hatchling | 魔典:进化魔典(T1) | 动物/巨龙/进化/散兵单位 | 65命/2防/0抗/0状抗 | 造价80产+60金 维护8金 | Dragon Dawn 龙之黎明
+- 灵鹰 Spirit Hawk | 其他 | 动物/灵体/*飞行/魔法战士单位/魔法起源 | 50命/1防/1抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 寻灵者 Spirit Tracker（spirit_tracker） | 文化:原初-泥潭鳄鱼 | 骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Primal Fury 原初之怒
+- 寻灵者 Spirit Tracker（spirit_tracker） | 文化:原初-风暴乌鸦 | 骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Primal Fury 原初之怒
+- 寻灵者 Spirit Tracker（spirit_tracker） | 文化:原初-冰川猛犸 | 骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Primal Fury 原初之怒
+- 寻灵者 Spirit Tracker（spirit_tracker） | 文化:原初-烬剑齿虎 | 骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Primal Fury 原初之怒
+- 寻灵者 Spirit Tracker（spirit_tracker） | 文化:原初-沙丘巨蟒 | 骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Primal Fury 原初之怒
+- 寻灵者 Spirit Tracker（spirit_tracker） | 文化:原初-隧行蜘蛛 | 骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Primal Fury 原初之怒
+- 寻灵者 Spirit Tracker（spirit_tracker） | 文化:原初-森灵之狼 | 骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Primal Fury 原初之怒
+- 分裂灵 Splitterling | 其他 | 斗士单位/魔法起源/幽影恶魔 | 35命/-1防/1抗/0状抗 | 造价60产+50金 维护8金 | Eldritch Realms 诡秘领域
+- 瓦解者 Sunderer | 文化:蛮族 | 散兵单位 | 60命/2防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 调查者 Surveyor（surveyor） | 文化:建筑师-秩序建筑师 | 候选骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Archon Prophecy 执政官预言
+- 调查者 Surveyor（surveyor） | 文化:建筑师-混沌建筑师 | 候选骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Archon Prophecy 执政官预言
+- 调查者 Surveyor（surveyor） | 文化:建筑师-星辰建筑师 | 候选骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Archon Prophecy 执政官预言
+- 调查者 Surveyor（surveyor） | 文化:建筑师-物质建筑师 | 候选骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Archon Prophecy 执政官预言
+- 调查者 Surveyor（surveyor） | 文化:建筑师-自然建筑师 | 候选骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Archon Prophecy 执政官预言
+- 调查者 Surveyor（surveyor） | 文化:建筑师-暗影建筑师 | 候选骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Archon Prophecy 执政官预言
+- 誓言守卫 Sworn Guard（sworn_guard） | 文化:负誓者-正义 | 长柄武器单位 | 75命/2防/0抗/0状抗 | 造价80产+60金 维护8金 | Ways of War 战争之道
+- 誓言守卫 Sworn Guard（sworn_guard） | 文化:负誓者-和谐 | 长柄武器单位 | 75命/2防/0抗/0状抗 | 造价80产+60金 维护8金 | Ways of War 战争之道
+- 誓言守卫 Sworn Guard（sworn_guard） | 文化:负誓者-争斗 | 长柄武器单位 | 75命/2防/0抗/0状抗 | 造价80产+60金 维护8金 | Ways of War 战争之道
+- 触手 Tentacle | 召唤:召唤触手 Conjure Tentacle（触手魔典(T1)） | 斗士单位/魔法起源 | 50命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Eldritch Realms 诡秘领域
+- 棘刺骷髅弓手 Thorned Skeleton Archer | 其他 | 魔法起源/远程单位/亡灵 | 50命/0防/0抗/0状抗 | 造价35产+10魂 维护8金 | Thrones of Blood 鲜血王座
+- 棘刺骷髅法师 Thorned Skeleton Mage | 其他 | 战斗法师单位/魔法起源/亡灵 | 40命/0防/2抗/0状抗 | 造价35产+10魂 维护8金 | Thrones of Blood 鲜血王座
+- 棘刺骷髅民兵 Thorned Skeleton Militia | 其他 | 魔法起源/长柄武器单位/亡灵 | 60命/2防/0抗/0状抗 | 造价35产+10魂 维护8金 | Thrones of Blood 鲜血王座
+- 棘刺骷髅战士 Thorned Skeleton Warrior | 其他 | 魔法起源/护盾单位/亡灵 | 55命/5防/0抗/0状抗 | 造价35产+10魂 维护8金 | Thrones of Blood 鲜血王座
+- 镇民 Townsman | 其他 | — | 1命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | 本体
+- 贸易路线 Trade Route | 其他 | — | 1命/0防/0抗/0状抗 | 维护8金 | 本体
+- 吸血蜘蛛幼崽 Vampire Spider Hatchling | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/进化/斗士单位/蜘蛛 | 50命/1防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 战犬 War Hound | 其他 | 动物/冲击单位 | 35命/2防/0抗/0状抗 | 造价60产+50金 维护8金 | 本体
+- 战士 Warrior | 文化:蛮族 | 候选骑兵/护盾单位 | 70命/5防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 旅者 Wayfarer（wayfarer） | 文化:负誓者-正义 | 骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Ways of War 战争之道
+- 旅者 Wayfarer（wayfarer） | 文化:负誓者-和谐 | 骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Ways of War 战争之道
+- 旅者 Wayfarer（wayfarer） | 文化:负誓者-争斗 | 骑兵/斥候单位 | 45命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | Ways of War 战争之道
+- 疾风战士 Wind Warrior（wind_warrior） | 文化:游牧民-清道夫 | 护盾单位 | 70命/5防/0抗/0状抗 | 造价80产+60金 维护8金 | Rise from Ruin 废墟崛起
+- 疾风战士 Wind Warrior（wind_warrior） | 文化:游牧民-征服者 | 护盾单位 | 70命/5防/0抗/0状抗 | 造价80产+60金 维护8金 | Rise from Ruin 废墟崛起
+- 双足飞龙幼体 Wyvern Fledgling | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/巨龙/进化/*飞行/魔法战士单位 | 60命/1防/1抗/0状抗 | 造价60产+50金 维护8金 | Dragon Dawn 龙之黎明
+- 幼年腐蚀蠕虫 Young Caustic Worm | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/进化/冲击单位 | 65命/2防/0抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 狂热者 Zealot | 召唤:召唤狂热者 Summon Zealot（狂热魔典(T1)） | 魔法战士单位 | 60命/2防/2抗/0状抗 | 造价80产+60金 维护8金 | 本体
+- 僵尸 Zombie | 其他 | 斗士单位/魔法起源/亡灵 | 60命/0防/0抗/0状抗 | 造价60产+50金 维护8金 | 本体
+
+## T2
+- 护法师塔 Abjurer Pylon | 召唤:召唤护法师塔 Conjure Abjurer Pylon（护法魔典(T1)） | 塔楼 | 70命/2防/2抗/0状抗 | 造价120产+100金 维护12金 | Secrets of the Archmages 大法师之秘
+- 诅咒食人魔 Accursed Ogre | 召唤:召唤诅咒食人魔 Summon Accursed Ogre | 受诅恶魔/魔法起源/冲击单位 | 90命/3防/1抗/0状抗 | 造价120产+100金 维护12金 | Ways of War 战争之道
+- 理念魔方 Affinity Tesseract（affinity_tesseract） | 其他 | 战斗法师单位/魔法起源/塔楼 | 40命/0防/0抗/0状抗 | 造价120产+100金 维护12金 | Archon Prophecy 执政官预言
+- 理念魔方 Affinity Tesseract（affinity_tesseract） | 其他 | 战斗法师单位/魔法起源/塔楼 | 40命/0防/0抗/0状抗 | 造价120产+100金 维护12金 | Archon Prophecy 执政官预言
+- 理念魔方 Affinity Tesseract（affinity_tesseract） | 其他 | 战斗法师单位/魔法起源/塔楼 | 40命/0防/0抗/0状抗 | 造价120产+100金 维护12金 | Archon Prophecy 执政官预言
+- 理念魔方 Affinity Tesseract（affinity_tesseract） | 其他 | 战斗法师单位/魔法起源/塔楼 | 40命/0防/0抗/0状抗 | 造价120产+100金 维护12金 | Archon Prophecy 执政官预言
+- 理念魔方 Affinity Tesseract（affinity_tesseract） | 其他 | 战斗法师单位/魔法起源/塔楼 | 40命/0防/0抗/0状抗 | 造价120产+100金 维护12金 | Archon Prophecy 执政官预言
+- 理念魔方 Affinity Tesseract（affinity_tesseract） | 其他 | 战斗法师单位/魔法起源/塔楼 | 40命/0防/0抗/0状抗 | 造价120产+100金 维护12金 | Archon Prophecy 执政官预言
+- 摧残者 Afflictor | 魔典:炼金魔典(T1) | 远程单位 | 65命/1防/1抗/4状抗 | 造价120产+100金 维护12金 | Empires & Ashes 帝国与灰烬
+- 活体战锤 Animated Hammer | 其他 | 构装体/*漂浮/冲击单位 | 80命/5防/1抗/0状抗 | 造价80产+60金 维护12金 | Giant Kings 巨人国王
+- 活体寒冰弓 Animated Ice Bow | 其他 | 构装体/*漂浮/远程单位 | 75命/2防/2抗/0状抗 | 造价120产+100金 维护12金 | Giant Kings 巨人国王
+- 活体寒冰戟 Animated Ice Glaive | 其他 | 构装体/*漂浮/长柄武器单位 | 80命/3防/1抗/0状抗 | 造价120产+100金 维护12金 | Giant Kings 巨人国王
+- 活体熔岩弓 Animated Lava Bow | 其他 | 构装体/*漂浮/远程单位 | 75命/2防/2抗/0状抗 | 造价120产+100金 维护12金 | Giant Kings 巨人国王
+- 活体熔岩锤 Animated Lava Hammer | 其他 | 构装体/*漂浮/冲击单位 | 80命/3防/1抗/0状抗 | 造价80产+60金 维护12金 | Giant Kings 巨人国王
+- 活体盾牌 Animated Shield | 其他 | 构装体/*漂浮/护盾单位 | 70命/6防/2抗/0状抗 | 造价120产+100金 维护12金 | Giant Kings 巨人国王
+- 活体风暴长戟 Animated Storm Glaive | 其他 | 构装体/*漂浮/长柄武器单位 | 80命/3防/1抗/0状抗 | 造价120产+100金 维护12金 | Giant Kings 巨人国王
+- 活体风暴盾 Animated Storm Shield | 其他 | 构装体/*漂浮/护盾单位 | 70命/6防/2抗/0状抗 | 造价120产+100金 维护12金 | Giant Kings 巨人国王
+- 灵论者 Animist（animist） | 文化:原初-泥潭鳄鱼 | 候选骑兵/支援单位 | 60命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | Primal Fury 原初之怒
+- 灵论者 Animist（animist） | 文化:原初-风暴乌鸦 | 候选骑兵/支援单位 | 60命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | Primal Fury 原初之怒
+- 灵论者 Animist（animist） | 文化:原初-冰川猛犸 | 候选骑兵/支援单位 | 60命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | Primal Fury 原初之怒
+- 灵论者 Animist（animist） | 文化:原初-烬剑齿虎 | 候选骑兵/支援单位 | 60命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | Primal Fury 原初之怒
+- 灵论者 Animist（animist） | 文化:原初-沙丘巨蟒 | 候选骑兵/支援单位 | 60命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | Primal Fury 原初之怒
+- 灵论者 Animist（animist） | 文化:原初-隧行蜘蛛 | 候选骑兵/支援单位 | 60命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | Primal Fury 原初之怒
+- 灵论者 Animist（animist） | 文化:原初-森灵之狼 | 候选骑兵/支援单位 | 60命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | Primal Fury 原初之怒
+- 猿猴 Ape | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/冲击单位 | 90命/3防/1抗/0状抗 | 造价120产+100金 维护12金 | Giant Kings 巨人国王
+- 拔擢骑士 Aspirant Knight（aspirant_knight） | 文化:封建-帝君 | 骑兵/冲击单位 | 80命/3防/1抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 拔擢骑士 Aspirant Knight（aspirant_knight） | 文化:封建-世家 | 骑兵/冲击单位 | 80命/3防/1抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 星辰守护者 Astral Keeper | 召唤:召唤星辰守护者 Conjure Astral Keeper（召唤魔典(T2)） | 灵体/*漂浮/魔法起源/支援单位 | 70命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | 本体
+- 弩炮 Ballista | 其他 | 城战器具 | 15命/1防/1抗/0状抗 | 造价220产+140金 维护12金 | 本体
+- 旗手 Bannerman（bannerman） | 文化:封建-帝君 | 候选骑兵/支援单位 | 70命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | 本体
+- 旗手 Bannerman（bannerman） | 文化:封建-世家 | 候选骑兵/支援单位 | 70命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | 本体
+- 祝福巨龙 Blessed Dragon | 召唤:召唤祝福巨龙 Summon Blessed Dragon | 神族/巨龙/*飞行/魔法起源/支援单位 | 70命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | Ways of War 战争之道
+- 鲜血狂信徒 Blood Cultist | 魔典:血祭秘典(T1) | 战斗法师单位/候选骑兵 | 55命/0防/2抗/0状抗 | 造价120产+100金 维护12金 | Thrones of Blood 鲜血王座
+- 连发弩箭 Bolt Repeater | 其他 | 城战器具 | 70命/1防/1抗/0状抗 | 造价140产+110金 维护12金 | 本体
+- 连发弩箭塔楼 Bolt Repeater Tower | 其他 | 城战器具 | 70命/2防/2抗/0状抗 | 造价140产+110金 维护12金 | 本体
+- 白骨双足飞龙 Bone Wyvern | 召唤:亡者大军 Raise Undead Army（永世君王魔典(T5)） | 动物/巨龙/*飞行/魔法战士单位/魔法起源/亡灵 | 70命/2防/2抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 恶徒 Bravo（bravo） | 文化:重商-卡特尔 | 冲击单位 | 90命/3防/1抗/0状抗 | 造价120产+100金 维护12金 | The Silver Seas 白银之海
+- 恶徒 Bravo（bravo） | 文化:重商-男爵领地 | 冲击单位 | 90命/3防/1抗/0状抗 | 造价120产+100金 维护12金 | The Silver Seas 白银之海
+- 酿造师食人魔 Brewer Ogre | 其他 | 斗士单位 | 95命/3防/1抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 棕熊 Brown Bear | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/进化/斗士单位 | 70命/2防/0抗/0状抗 | 造价120产+100金 维护12金 | Empires & Ashes 帝国与灰烬
+- 刽子手食人魔 Butcher Ogre | 其他 | 斗士单位 | 95命/3防/1抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 腐食鹫 Carrion Bird | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/斗士单位/*飞行 | 70命/2防/1抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 天界狮鹫 Celestial Griffon | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/神族/*飞行/魔法起源/散兵单位 | 65命/3防/3抗/0状抗 | 造价120产+100金 维护12金 | Archon Prophecy 执政官预言
+- 缠绕者 Constrictor | 魔典:触手魔典(T1) | 长柄武器单位 | 80命/4防/1抗/0状抗 | 造价120产+100金 维护12金 | Eldritch Realms 诡秘领域
+- 诅咒贩子 Curse Peddler | 文化:重商-卡特尔 | 支援单位 | 60命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | The Silver Seas 白银之海
+- 日光矛手 Daylight Spear | 文化:至高 | 长柄武器单位 | 80命/3防/2抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 死亡守卫 Death Guard | 文化:黑暗-死亡教派 | 长柄武器单位 | 80命/3防/1抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 毁灭之球 Devastator Sphere | 其他 | 构装体/城战器具 | 60命/3防/1抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 恐怖企鹅 Dire Penguin | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/斗士单位/企鹅 | 70命/2防/1抗/0状抗 | 造价140产+100法力 维护12金 | 本体
+- 神圣道标 Divine Beacon | 召唤:召唤神圣道标 Conjure Divine Beacon（道标魔典(T2)） | 塔楼 | 80命/2防/2抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 尘沙织者 Dustweaver（dustweaver） | 文化:游牧民-清道夫 | 支援单位 | 60命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | Rise from Ruin 废墟崛起
+- 尘沙织者 Dustweaver（dustweaver） | 文化:游牧民-征服者 | 支援单位 | 60命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | Rise from Ruin 废墟崛起
+- 大象 Elephant | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/冲击单位 | 90命/3防/0抗/0状抗 | 造价120产+100金 维护12金 | Primal Fury 原初之怒
+- 祈唤师 Evoker | 魔典:祈唤魔典(T1) | 战斗法师单位/候选骑兵 | 55命/0防/2抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 火焰符石 Fire Runestone | 其他 | 魔法起源/塔楼 | 35命/1防/1抗/0状抗 | 造价80产+60金 维护12金 | 本体
+- 鲜花尖刺 Floral Stinger | 召唤:活化鲜花 Animate Flora（林苑魔典(T2)） | 植物/散兵单位 | 80命/2防/0抗/0状抗 | 造价220产+140金 维护12金 | 本体
+- 游蛇 Flow Serpent | 其他 | 灵体/斗士单位/*漂浮/魔法起源 | 35命/2防/3抗/0状抗 | 造价140产+110金 维护12金 | 本体
+- 流缚弓箭手 Flowbinder Archer | 魔典:水法术魔典(T1) | 候选骑兵/远程单位 | 65命/1防/1抗/0状抗 | 造价120产+100金 维护12金 | The Silver Seas 白银之海
+- 湮裂祈唤师 Fractured Evoker | 其他 | 战斗法师单位/灵体 | 55命/0防/3抗/0状抗 | 造价120产+100金 维护12金 | Rise from Ruin 废墟崛起
+- 怒汉 Fury | 文化:蛮族 | 候选骑兵/远程单位 | 65命/1防/1抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 石像鬼 Gargoyle | 魔典:岩石魔典(T1) | 元素/*飞行/魔法起源/冲击单位 | 80命/3防/1抗/0状抗 | 造价120产+50金+50法力 维护12金 | 本体
+- 小妖精 Gremlin | 召唤:召唤小妖精 Summon Gremlin（混乱魔典(T2)） | 地狱恶魔/魔法战士单位/魔法起源 | 60命/2防/2抗/0状抗 | 造价140产+100法力 维护12金 | 本体
+- 狮鹫 Griffon | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/*飞行/冲击单位 | 80命/2防/2抗/0状抗 | 造价120产+100金 维护12金 | Archon Prophecy 执政官预言
+- 守护者 Guardian（guardian） | 文化:建筑师-秩序建筑师 | 护盾单位 | 80命/5防/2抗/0状抗 | 造价120产+100金 维护12金 | Archon Prophecy 执政官预言
+- 守护者 Guardian（guardian） | 文化:建筑师-混沌建筑师 | 护盾单位 | 80命/5防/2抗/0状抗 | 造价120产+100金 维护12金 | Archon Prophecy 执政官预言
+- 守护者 Guardian（guardian） | 文化:建筑师-星辰建筑师 | 护盾单位 | 80命/5防/2抗/0状抗 | 造价120产+100金 维护12金 | Archon Prophecy 执政官预言
+- 守护者 Guardian（guardian） | 文化:建筑师-物质建筑师 | 护盾单位 | 80命/5防/2抗/0状抗 | 造价120产+100金 维护12金 | Archon Prophecy 执政官预言
+- 守护者 Guardian（guardian） | 文化:建筑师-自然建筑师 | 护盾单位 | 80命/5防/2抗/0状抗 | 造价120产+100金 维护12金 | Archon Prophecy 执政官预言
+- 守护者 Guardian（guardian） | 文化:建筑师-暗影建筑师 | 护盾单位 | 80命/5防/2抗/0状抗 | 造价120产+100金 维护12金 | Archon Prophecy 执政官预言
+- 戟手 Halberdier | 文化:勤勉 | 长柄武器单位 | 80命/3防/1抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 治疗尖塔 Healing Spire | 其他 | 塔楼 | 80命/2防/2抗/0状抗 | 造价140产+110金 维护12金 | 本体
+- 霜冻鳐鱼 Hoarfrost Manta | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/战斗法师单位/元素/*漂浮/魔法起源 | 40命/0防/1抗/0状抗 | 造价120产+100金 维护12金 | The Silver Seas 白银之海
+- 猛犬之主 Houndmaster | 魔典:部落魔典(T1) | 骑兵/远程单位 | 55命/1防/1抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 猎人蜘蛛 Hunter Spider | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/进化/斗士单位/蜘蛛 | 75命/2防/1抗/0状抗 | 造价100产+90金 维护12金 | 本体
+- 寒冰蜘蛛 Ice Spider | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/元素/进化/魔法战士单位/蜘蛛 | 75命/2防/2抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 孽障克拉肯 Kraken Spawn | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/进化/斗士单位 | 70命/2防/1抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 副官 Lieutenant | 魔典:战团魔典(T1) | 斗士单位/候选骑兵/候选骑兵 | 85命/3防/2抗/0状抗 | 造价120产+100金 维护12金 | Rise from Ruin 废墟崛起
+- 光使 Lightbringer | 召唤:召唤光明使者 Summon Lightbringer（裁判魔典(T2)） | 战斗法师单位/神族/*飞行/魔法起源 | 55命/0防/2抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 闪电符文蟹 Lightning Rune Crab | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/进化/护盾单位 | 70命/6防/1抗/0状抗 | 造价120产+100金 维护12金 | The Silver Seas 白银之海
+- 利塞罗石怪 - 穿刺者 Lithorine Needler | 魔典:水晶契约(T0) | 元素/魔法起源/远程单位 | 65命/1防/1抗/0状抗 | 造价140产+100法力 维护12金 | Giant Kings 巨人国王
+- 迷失之魂 Lost Soul | 其他 | 灵体/斗士单位/亡灵 | 60命/2防/1抗/0状抗 | 造价220产+140金 维护12金 | Thrones of Blood 鲜血王座
+- 锁法者 Magelock（magelock） | 文化:掠夺者-帝国 | 远程单位 | 65命/1防/1抗/0状抗 | 造价120产+100金 维护12金 | Empires & Ashes 帝国与灰烬
+- 锁法者 Magelock（magelock） | 文化:掠夺者-联邦 | 远程单位 | 65命/1防/1抗/0状抗 | 造价120产+100金 维护12金 | Empires & Ashes 帝国与灰烬
+- 法匠 Magewright | 文化:重商-男爵领地 | 支援单位 | 60命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | The Silver Seas 白银之海
+- 僧侣 Monk | 魔典:纪律魔典(T1) | 魔法战士单位 | 80命/3防/2抗/0状抗 | 造价120产+100金 维护12金 | Ways of War 战争之道
+- 魂灭者 Mortalist | 文化:黑暗-死亡教派 | 战斗法师单位/候选骑兵 | 55命/0防/2抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 死灵法师 Necromancer | 魔典:死灵魔典(T1) | 支援单位 | 60命/1防/3抗/2状抗 | 造价120产+50金+20魂 维护12金 | 本体
+- 尼姆 Nimu | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/护盾单位 | 80命/6防/1抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 监督者 Overseer | 文化:掠夺者-帝国 | 候选骑兵/支援单位 | 70命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | Empires & Ashes 帝国与灰烬
+- 瘟疫巨蛇 Plague Serpent | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/魔法战士单位 | 70命/2防/2抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 北极熊 Polar Bear | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/斗士单位 | 80命/2防/0抗/0状抗 | 造价120产+100金 维护12金 | Empires & Ashes 帝国与灰烬
+- 原初冲锋者 Primal Charger（primal_charger） | 文化:原初-泥潭鳄鱼 | 冲击单位 | 80命/3防/1抗/0状抗 | 造价120产+100金 维护12金 | Primal Fury 原初之怒
+- 原初冲锋者 Primal Charger（primal_charger） | 文化:原初-风暴乌鸦 | 冲击单位 | 80命/3防/1抗/0状抗 | 造价120产+100金 维护12金 | Primal Fury 原初之怒
+- 原初冲锋者 Primal Charger（primal_charger） | 文化:原初-冰川猛犸 | 冲击单位 | 80命/3防/1抗/0状抗 | 造价120产+100金 维护12金 | Primal Fury 原初之怒
+- 原初冲锋者 Primal Charger（primal_charger） | 文化:原初-烬剑齿虎 | 冲击单位 | 80命/3防/1抗/0状抗 | 造价120产+100金 维护12金 | Primal Fury 原初之怒
+- 原初冲锋者 Primal Charger（primal_charger） | 文化:原初-沙丘巨蟒 | 冲击单位 | 80命/3防/1抗/0状抗 | 造价120产+100金 维护12金 | Primal Fury 原初之怒
+- 原初冲锋者 Primal Charger（primal_charger） | 文化:原初-隧行蜘蛛 | 冲击单位 | 80命/3防/1抗/0状抗 | 造价120产+100金 维护12金 | Primal Fury 原初之怒
+- 原初冲锋者 Primal Charger（primal_charger） | 文化:原初-森灵之狼 | 冲击单位 | 80命/3防/1抗/0状抗 | 造价120产+100金 维护12金 | Primal Fury 原初之怒
+- 原初鳄鱼 Primal Crocodile | 召唤:咒唤原初鳄鱼 Conjure Primal Crocodile（原初 - 泥潭鳄鱼(T0)） | 动物/灵体/魔法起源/神话单位 | 70命/2防/2抗/0状抗 | 造价120产+100金 维护12金 | Primal Fury 原初之怒
+- 原初乌鸦 Primal Crow | 召唤:咒唤原初乌鸦 Conjure Primal Crow（原初 - 风暴乌鸦(T0)） | 动物/灵体/*飞行/魔法起源/神话单位 | 60命/1防/1抗/0状抗 | 造价120产+100金 维护12金 | Primal Fury 原初之怒
+- 原初猛犸 Primal Mammoth | 召唤:咒唤原初猛犸 Conjure Primal Mammoth（原初 - 冰川猛犸(T0)） | 动物/灵体/魔法起源/神话单位 | 80命/1防/2抗/0状抗 | 造价120产+100金 维护12金 | Primal Fury 原初之怒
+- 原初剑齿虎 Primal Sabertooth | 召唤:咒唤原初剑齿虎 Conjure Primal Sabertooth（原初 - 烬剑齿虎(T0)） | 动物/灵体/魔法起源/神话单位 | 70命/2防/2抗/0状抗 | 造价120产+100金 维护12金 | Primal Fury 原初之怒
+- 原初巨蛇 Primal Serpent | 召唤:咒唤原初巨蟒 Conjure Primal Serpent（原初 - 沙丘巨蟒(T0)） | 动物/灵体/魔法起源/神话单位 | 70命/2防/2抗/0状抗 | 造价220产+140金 维护12金 | Primal Fury 原初之怒
+- 原初蜘蛛 Primal Spider | 召唤:咒唤原初蜘蛛 Conjure Primal Spider（原初 - 隧行蜘蛛(T0)） | 动物/灵体/魔法起源/神话单位/蜘蛛 | 70命/2防/2抗/0状抗 | 造价120产+100金 维护12金 | Primal Fury 原初之怒
+- 原初狼 Primal Wolf | 召唤:咒唤原初狼 Conjure Primal Wolf（原初 - 森灵之狼(T0)） | 动物/灵体/魔法起源/神话单位 | 70命/2防/2抗/0状抗 | 造价120产+100金 维护12金 | Primal Fury 原初之怒
+- 火焰飞蛾 Pyremoth | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/战斗法师单位/*飞行 | 55命/0防/2抗/0状抗 | 造价120产+100金 维护12金 | Giant Kings 巨人国王
+- 炎术师 Pyromancer | 魔典:炎术魔典(T1) | 战斗法师单位/候选骑兵 | 55命/0防/2抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 撞击战舰 Ram Warship（ram_warship） | 其他 | 冲击单位 | 100命/4防/2抗/0状抗 | 造价100产+90金 维护12金 | 本体
+- 撞击战舰 Ram Warship（ram_warship） | 其他 | 冲击单位 | 100命/4防/2抗/0状抗 | 造价100产+90金 维护12金 | 本体
+- 剑脊兽 Razorback | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/远程单位 | 65命/3防/1抗/0状抗 | 造价100产+90金 维护12金 | 本体
+- 工兵 Sapper | 文化:掠夺者-联邦 | 候选骑兵/支援单位 | 60命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | Empires & Ashes 帝国与灰烬
+- 废品隐士 Scrap Hermit | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/护盾单位 | 80命/6防/1抗/0状抗 | 造价120产+100金 维护12金 | Empires & Ashes 帝国与灰烬
+- 护印者 Sealbearer（sealbearer） | 文化:负誓者-正义 | 战斗法师单位 | 55命/0防/2抗/0状抗 | 造价120产+100金 维护12金 | Ways of War 战争之道
+- 护印者 Sealbearer（sealbearer） | 文化:负誓者-和谐 | 战斗法师单位 | 55命/0防/2抗/0状抗 | 造价120产+100金 维护12金 | Ways of War 战争之道
+- 护印者 Sealbearer（sealbearer） | 文化:负誓者-争斗 | 战斗法师单位 | 55命/0防/2抗/0状抗 | 造价120产+100金 维护12金 | Ways of War 战争之道
+- 暗影编织者 Shademaker（shademaker） | 文化:建筑师-秩序建筑师 | 远程单位 | 65命/1防/1抗/0状抗 | 造价120产+100金 维护12金 | Archon Prophecy 执政官预言
+- 暗影编织者 Shademaker（shademaker） | 文化:建筑师-混沌建筑师 | 远程单位 | 65命/1防/1抗/0状抗 | 造价120产+100金 维护12金 | Archon Prophecy 执政官预言
+- 暗影编织者 Shademaker（shademaker） | 文化:建筑师-星辰建筑师 | 远程单位 | 65命/1防/1抗/0状抗 | 造价120产+100金 维护12金 | Archon Prophecy 执政官预言
+- 暗影编织者 Shademaker（shademaker） | 文化:建筑师-物质建筑师 | 远程单位 | 65命/1防/1抗/0状抗 | 造价120产+100金 维护12金 | Archon Prophecy 执政官预言
+- 暗影编织者 Shademaker（shademaker） | 文化:建筑师-自然建筑师 | 远程单位 | 65命/1防/1抗/0状抗 | 造价120产+100金 维护12金 | Archon Prophecy 执政官预言
+- 暗影编织者 Shademaker（shademaker） | 文化:建筑师-暗影建筑师 | 远程单位 | 65命/1防/1抗/0状抗 | 造价120产+100金 维护12金 | Archon Prophecy 执政官预言
+- 尖啸蝙蝠 Shrieking Bat | 召唤:呼唤狂野动物 Call Wild Animal（野兽魔典(T1)） | 动物/*飞行/远程单位/亡灵 | 65命/1防/1抗/0状抗 | 造价120产+100金 维护12金 | Thrones of Blood 鲜血王座
+- 抚慰者 Soother（soother） | 文化:神奥-调谐 | 支援单位 | 60命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | 本体
+- 抚慰者 Soother（soother） | 文化:神奥-潜能 | 支援单位 | 60命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | 本体
+- 抚慰者 Soother（soother） | 文化:神奥-召唤 | 支援单位 | 60命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | 本体
+- 咒盾者 Spellshield（spellshield） | 文化:神奥-调谐 | 骑兵/护盾单位 | 80命/6防/2抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 咒盾者 Spellshield（spellshield） | 文化:神奥-潜能 | 骑兵/护盾单位 | 80命/6防/2抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 咒盾者 Spellshield（spellshield） | 文化:神奥-召唤 | 骑兵/护盾单位 | 80命/6防/2抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 砺钢者 Steelshaper | 文化:勤勉 | 支援单位 | 60命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | 本体
+- 雷鳞巨蛇 Stormscale Serpent | 其他 | 动物/魔法战士单位 | 70命/2防/2抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 漫沙行者 Strider（strider） | 文化:游牧民-清道夫 | 候选骑兵/远程单位 | 65命/1防/1抗/0状抗 | 造价120产+100金 维护12金 | Rise from Ruin 废墟崛起
+- 漫沙行者 Strider（strider） | 文化:游牧民-征服者 | 候选骑兵/远程单位 | 65命/1防/1抗/0状抗 | 造价120产+100金 维护12金 | Rise from Ruin 废墟崛起
+- 太阳牧师 Sun Priest | 文化:至高 | 支援单位 | 60命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | 本体
+- 暴君守卫 Tyrant Guard | 文化:黑暗-暴政教派 | 长柄武器单位 | 80命/3防/1抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 守誓者 Vowkeeper（vowkeeper） | 文化:负誓者-正义 | 候选骑兵/支援单位 | 60命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | Ways of War 战争之道
+- 守誓者 Vowkeeper（vowkeeper） | 文化:负誓者-和谐 | 候选骑兵/支援单位 | 60命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | Ways of War 战争之道
+- 守誓者 Vowkeeper（vowkeeper） | 文化:负誓者-争斗 | 候选骑兵/支援单位 | 60命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | Ways of War 战争之道
+- 战争萨满 War Shaman | 文化:蛮族 | 支援单位 | 60命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | 本体
+- 座狼 Warg | 召唤:森林苏醒 Awaken the Forest（自然之怒魔典(T4)） | 动物/斗士单位 | 70命/2防/1抗/0状抗 | 造价100产+90金 维护12金 | 本体
+- 术士 Warlock | 文化:黑暗-暴政教派 | 战斗法师单位/候选骑兵 | 55命/0防/2抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 织网蜘蛛 Weaver Spider | 召唤:召唤织网蜘蛛 Conjure Weaver Spiders（织网者魔典(T3)） | 动物/进化/远程单位/蜘蛛 | 65命/1防/1抗/0状抗 | 造价100产+90金 维护12金 | Secrets of the Archmages 大法师之秘
+- 白女巫 White Witch | 魔典:冰冻魔典(T1) | 战斗法师单位/候选骑兵 | 55命/0防/2抗/0状抗 | 造价120产+100金 维护12金 | 本体
+- 狂野语者 Wildspeaker | 魔典:野兽魔典(T1) | 骑兵/支援单位 | 50命/1防/3抗/2状抗 | 造价120产+100金 维护12金 | 本体
+- 意志窃取者 Willthief | 召唤:召唤意志窃取者 Summon Willthief | 魔法战士单位/魔法起源/幽影恶魔 | 70命/2防/2抗/0状抗 | 造价120产+100金 维护12金 | Eldritch Realms 诡秘领域
+- 风怒者 Wind Rager | 召唤:召唤风怒者 Summon Wind Rager（疾风魔典(T2)） | 元素/*漂浮/魔法战士单位/魔法起源 | 65命/2防/2抗/0状抗 | 造价80产+60金 维护12金 | 本体
+
+## T3
+- 诱拐者 Abductor | 其他 | *漂浮/魔法起源/神话单位/幽影恶魔 | 110命/4防/4抗/3状抗 | 造价120产+100金 维护20金 | Eldritch Realms 诡秘领域
+- 诅咒之刃 Accursed Blade | 召唤:恶魔召唤 Demonic Summoning（恶魔之门魔典(T4)） | 受诅恶魔/魔法起源/长柄武器单位 | 110命/5防/2抗/3状抗 | 造价220产+140金 维护20金 | Ways of War 战争之道
+- 咒怨哀嚎者 Accursed Lamenter | 召唤:召唤咒怨哀嚎者 Summon Accursed Lamenter（受咒者魔典(T2)） | 受诅恶魔/*漂浮/支援单位 | 80命/2防/4抗/5状抗 | 造价220产+140金 维护20金 | The Silver Seas 白银之海
+- 强化魔塔 Amplification Pylon | 召唤:召唤强化魔塔 Conjure Amplification Pylon（强化魔典(T3)） | 塔楼 | 80命/2防/2抗/3状抗 | 造价120产+100金 维护20金 | 本体
+- 先祖守望者 Ancestral Warden（ancestral_warden） | 文化:原初-泥潭鳄鱼 | 长柄武器单位 | 100命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | Primal Fury 原初之怒
+- 先祖守望者 Ancestral Warden（ancestral_warden） | 文化:原初-风暴乌鸦 | 长柄武器单位 | 100命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | Primal Fury 原初之怒
+- 先祖守望者 Ancestral Warden（ancestral_warden） | 文化:原初-冰川猛犸 | 长柄武器单位 | 100命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | Primal Fury 原初之怒
+- 先祖守望者 Ancestral Warden（ancestral_warden） | 文化:原初-烬剑齿虎 | 长柄武器单位 | 100命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | Primal Fury 原初之怒
+- 先祖守望者 Ancestral Warden（ancestral_warden） | 文化:原初-沙丘巨蟒 | 长柄武器单位 | 100命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | Primal Fury 原初之怒
+- 先祖守望者 Ancestral Warden（ancestral_warden） | 文化:原初-隧行蜘蛛 | 长柄武器单位 | 100命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | Primal Fury 原初之怒
+- 先祖守望者 Ancestral Warden（ancestral_warden） | 文化:原初-森灵之狼 | 长柄武器单位 | 100命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | Primal Fury 原初之怒
+- 建筑师 Architect（architect） | 文化:建筑师-秩序建筑师 | 候选骑兵/支援单位 | 80命/2防/4抗/5状抗 | 造价220产+140金 维护20金 | Archon Prophecy 执政官预言
+- 建筑师 Architect（architect） | 文化:建筑师-混沌建筑师 | 候选骑兵/支援单位 | 80命/2防/4抗/5状抗 | 造价220产+140金 维护20金 | Archon Prophecy 执政官预言
+- 建筑师 Architect（architect） | 文化:建筑师-星辰建筑师 | 候选骑兵/支援单位 | 80命/2防/4抗/5状抗 | 造价220产+140金 维护20金 | Archon Prophecy 执政官预言
+- 建筑师 Architect（architect） | 文化:建筑师-物质建筑师 | 候选骑兵/支援单位 | 80命/2防/4抗/5状抗 | 造价220产+140金 维护20金 | Archon Prophecy 执政官预言
+- 建筑师 Architect（architect） | 文化:建筑师-自然建筑师 | 候选骑兵/支援单位 | 80命/2防/4抗/5状抗 | 造价220产+140金 维护20金 | Archon Prophecy 执政官预言
+- 建筑师 Architect（architect） | 文化:建筑师-暗影建筑师 | 候选骑兵/支援单位 | 80命/2防/4抗/5状抗 | 造价220产+140金 维护20金 | Archon Prophecy 执政官预言
+- 星辰巨蛇 Astral Serpent | 召唤:爆破显形 Explosive Manifestation（星汇魔典(T4)） | 灵体/*漂浮/魔法战士单位/魔法起源 | 80命/2防/4抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 星辰虹吸者 Astral Siphoner | 召唤:星辰虹吸者仪式 Astral Siphoner Ritual | 灵体/斗士单位/*漂浮/魔法起源 | 100命/2防/4抗/3状抗 | 造价240产+160金 维护20金 | 本体
+- 秋之仙灵 Autumn Fairy | 其他 | 战斗法师单位/仙灵/*飞行/魔法起源 | 75命/1防/3抗/3状抗 | 造价220产+140法力 维护20金 | 本体
+- 复仇者 Avenger | 文化:负誓者-正义 | 冲击单位 | 100命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | Ways of War 战争之道
+- 觉醒者 Awakener | 文化:至高 | 战斗法师单位/候选骑兵 | 75命/1防/3抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 弩炮塔 Ballista Tower | 其他 | 城战器具 | 60命/2防/2抗/3状抗 | 造价140产+110金 维护20金 | 本体
+- 弩炮战舰 Ballista Warship | 其他 | 远程单位 | 105命/3防/3抗/3状抗 | 造价180产+120金 维护20金 | 本体
+- 女妖 Banshee | 召唤:亡者大军 Raise Undead Army（永世君王魔典(T5)） | 战斗法师单位/灵体/*漂浮/魔法起源/亡灵 | 90命/2防/4抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 捍卫者 Bastion | 文化:勤勉 | 候选骑兵/护盾单位 | 100命/7防/2抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 狂战士 Berserker | 文化:蛮族 | 冲击单位 | 100命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 受祝之魂 Blessed Soul | 召唤:召唤受祝之魂 Summon Blessed Soul（道标魔典(T2)） | 神族/灵体/*漂浮/魔法起源/护盾单位 | 100命/7防/3抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 白骨恐魔 Bone Horror | 召唤:亡者大军 Raise Undead Army（永世君王魔典(T5)） | 魔法起源/冲击单位/亡灵 | 100命/4防/1抗/3状抗 | 造价170产+50魂 维护20金 | 本体
+- 破阵者 Breacher | 文化:掠夺者-联邦 | 魔法战士单位/候选骑兵 | 90命/3防/3抗/3状抗 | 造价220产+140金 维护20金 | Empires & Ashes 帝国与灰烬
+- 青铜魔像 Bronze Golem | 魔典:构装体魔典(T2) | 构装体/长柄武器单位 | 100命/5防/2抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 弹射器塔楼 Catapult Tower | 其他 | 城战器具 | 60命/2防/2抗/3状抗 | 造价140产+110金 维护20金 | 本体
+- 腐蚀蠕虫 Caustic Worm | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/冲击单位 | 100命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 冠军勇士 Champion | 文化:游牧民-征服者 | 冲击单位 | 110命/5防/1抗/3状抗 | 造价220产+140金 维护20金 | Rise from Ruin 废墟崛起
+- 随军祭司 Chaplain | 魔典:道标魔典(T2) | 支援单位 | 80命/2防/4抗/5状抗 | 造价220产+140金 维护20金 | 本体
+- 黏土劲弩手 Clay Arbalest | 其他 | 构装体/远程单位 | 65命/1防/1抗/3状抗 | 造价220产+140金 维护20金 | Giant Kings 巨人国王
+- 黏土冲锋者 Clay Charger | 其他 | 构装体/冲击单位 | 90命/3防/1抗/3状抗 | 造价220产+140金 维护20金 | Giant Kings 巨人国王
+- 黏土防御者 Clay Defender | 其他 | 构装体/护盾单位 | 80命/6防/1抗/3状抗 | 造价220产+140金 维护20金 | Giant Kings 巨人国王
+- 收集者 Collector | 文化:游牧民-清道夫 | 长柄武器单位 | 100命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | Rise from Ruin 废墟崛起
+- 腐化之魂 Corrupt Soul | 召唤:亡者大军 Raise Undead Army（永世君王魔典(T5)） | 灵体/*漂浮/魔法战士单位/魔法起源/亡灵 | 90命/3防/3抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 水晶支柱 Crystal Pillar | 其他 | 塔楼 | 35命/2防/2抗/3状抗 | 造价220产+140金 维护20金 | Giant Kings 巨人国王
+- 死亡甲虫 Death Beetle | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/斗士单位 | 90命/5防/2抗/3状抗 | 造价220产+140金 维护20金 | Eldritch Realms 诡秘领域
+- 死亡潜行者 Death Stalker | 文化:黑暗-死亡教派 | 斗士单位 | 100命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 深海尼姆 Deep-Sea Nimu | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/支援单位 | 80命/2防/4抗/5状抗 | 造价220产+140金 维护20金 | 本体
+- 龙骑兵 Dragoon | 文化:掠夺者-帝国 | 骑兵/散兵单位 | 90命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | Empires & Ashes 帝国与灰烬
+- 恐惧蜘蛛女族长 Dread Spider Matriarch | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/斗士单位/蜘蛛 | 90命/3防/1抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 缠绕卫士 Entwined Protector | 召唤:森林苏醒 Awaken the Forest（自然之怒魔典(T4)） | 植物/护盾单位 | 110命/7防/3抗/3状抗 | 造价120产+100金 维护20金 | 本体
+- 火焰双足飞龙 Fire Wyvern | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/巨龙/*飞行/魔法战士单位 | 90命/3防/3抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 血肉憎恶 Flesh Abomination | 其他 | 斗士单位/魔法起源/幽影恶魔 | 90命/3防/2抗/3状抗 | 造价220产+140金 维护20金 | Eldritch Realms 诡秘领域
+- 湮裂蝎 Fractured Scorpion | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/灵体/护盾单位 | 90命/7防/4抗/3状抗 | 造价220产+140金 维护20金 | Rise from Ruin 废墟崛起
+- 湮裂独角兽 Fractured Unicorn | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/灵体/冲击单位 | 100命/3防/3抗/3状抗 | 造价220产+140金 维护20金 | Rise from Ruin 废墟崛起
+- 寒霜双足飞龙 Frost Wyvern | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/巨龙/*飞行/魔法战士单位 | 90命/3防/3抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 林苑行者 Glade Runner | 魔典:林苑魔典(T2) | 候选骑兵/远程单位 | 85命/2防/2抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 黄金双足飞龙 Gold Wyvern | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/巨龙/*飞行/魔法战士单位 | 90命/3防/3抗/3状抗 | 造价220产+140金 维护20金 | Dragon Dawn 龙之黎明
+- 血獠兽女族长 Goretusk Matriarch | 召唤:森林苏醒 Awaken the Forest（自然之怒魔典(T4)） | 动物/冲击单位 | 110命/4防/1抗/3状抗 | 造价120产+100金 维护20金 | 本体
+- 冰霜符石 Ice Runestone | 其他 | 塔楼 | 35命/2防/2抗/3状抗 | 造价220产+140金 维护20金 | Giant Kings 巨人国王
+- 焚烧之魂 Immolated Soul | 召唤:恶魔召唤 Demonic Summoning（恶魔之门魔典(T4)） | 灵体/*漂浮/地狱恶魔/魔法战士单位/魔法起源 | 90命/3防/3抗/3状抗 | 造价220产+140法力 维护20金 | Secrets of the Archmages 大法师之秘
+- 地狱猎犬 Inferno Hound | 召唤:恶魔召唤 Demonic Summoning（恶魔之门魔典(T4)） | 动物/地狱恶魔/魔法战士单位/魔法起源 | 90命/3防/3抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 裁判官 Inquisitor | 魔典:裁判魔典(T2) | 散兵单位 | 95命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 钢铁魔像 Iron Golem | 魔典:匠造魔典(T2) | 构装体/护盾单位 | 100命/7防/2抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 熔岩符石 Lava Runestone | 其他 | 塔楼 | 35命/2防/2抗/3状抗 | 造价220产+140金 维护20金 | Giant Kings 巨人国王
+- 家督亲卫 Liege Guard | 文化:封建-世家 | 候选骑兵/护盾单位 | 100命/6防/3抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 光明精灵 Light Spirit | 召唤:召唤光之灵体 Summon Light Spirit（庇护魔典(T3)） | 神族/元素/*漂浮/魔法起源/支援单位 | 80命/2防/4抗/5状抗 | 造价220产+140法力 维护20金 | 本体
+- 利塞罗石怪 - 碎石枪兵 Lithorine Shardlancer | 魔典:水晶契约(T0) | 元素/魔法起源/长柄武器单位 | 100命/5防/2抗/3状抗 | 造价220产+140法力 维护20金 | Giant Kings 巨人国王
+- 长弓手 Longbow | 文化:封建-帝君 | 远程单位 | 85命/2防/2抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 锁法大炮 Magelock Cannon（magelock_cannon） | 文化:掠夺者-帝国 | 构装体/远程单位 | 85命/4防/2抗/3状抗 | 造价220产+80战利 维护20金 | Empires & Ashes 帝国与灰烬
+- 锁法大炮 Magelock Cannon（magelock_cannon） | 文化:掠夺者-联邦 | 构装体/远程单位 | 85命/4防/2抗/3状抗 | 造价220产+80战利 维护20金 | Empires & Ashes 帝国与灰烬
+- 锁法大炮 Magelock Cannon（magelock_cannon） | 文化:掠夺者-联邦 | 构装体/远程单位 | 85命/4防/2抗/3状抗 | 造价220产+80恩惠 维护20金 | Empires & Ashes 帝国与灰烬
+- 屠法者 Mageslayer | 文化:重商-卡特尔 | 魔法战士单位/候选骑兵 | 90命/3防/3抗/3状抗 | 造价220产+140金 维护20金 | The Silver Seas 白银之海
+- 岩浆之灵 Magma Spirit | 召唤:召唤元素 Summon Elemental（地卜魔典(T3)） | 战斗法师单位/元素/*漂浮/魔法起源 | 85命/1防/3抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 猛犸 Mammoth | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/冲击单位 | 110命/4防/1抗/3状抗 | 造价220产+140金 维护20金 | Primal Fury 原初之怒
+- 雾灵 Mistling | 召唤:召唤雾灵 Summon Mistling（仙灵迷雾魔典(T2)） | 仙灵/魔法战士单位/魔法起源 | 90命/3防/3抗/3状抗 | 造价220产+140金 维护20金 | Primal Fury 原初之怒
+- 死灵尖塔 Necrotic Spire | 其他 | 塔楼 | 90命/2防/2抗/3状抗 | 造价140产+110金 维护20金 | 本体
+- 梦魇兽 Nightmare | 召唤:恶魔召唤 Demonic Summoning（恶魔之门魔典(T4)） | 动物/骑兵/地狱恶魔/魔法起源/冲击单位 | 90命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 仙女 Nymph | 召唤:召唤仙女 Summon Nymph（欣荣魔典(T2)） | 仙灵/魔法起源/植物/支援单位 | 80命/2防/4抗/5状抗 | 造价220产+140法力 维护20金 | 本体
+- 黑曜石双足飞龙 Obsidian Wyvern | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/巨龙/*飞行/魔法战士单位 | 90命/3防/3抗/3状抗 | 造价220产+140金 维护20金 | Dragon Dawn 龙之黎明
+- 弩炮 Onager | 其他 | 城战器具 | 35命/2防/2抗/3状抗 | 造价140产+110金 维护20金 | 本体
+- 欲望晶球 Orb of Desire | 召唤:召唤欲望晶球 Conjure Orb of Desire（燃烧热情魔典(T2)） | 塔楼 | 80命/3防/3抗/3状抗 | 造价220产+140金 维护20金 | Secrets of the Archmages 大法师之秘
+- 圣骑士 Paladin | 魔典:美德魔典(T2) | 候选骑兵/护盾单位 | 90命/7防/3抗/3状抗 | 造价220产+140金 维护20金 | Archon Prophecy 执政官预言
+- 和平使者 Peacebringer | 文化:负誓者-和谐 | 骑兵/远程单位 | 85命/2防/2抗/3状抗 | 造价220产+140金 维护20金 | Ways of War 战争之道
+- 瘟疫鳄鱼 Pestilence Crocodile | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/斗士单位/亡灵 | 90命/3防/2抗/3状抗 | 造价220产+140金 维护20金 | Primal Fury 原初之怒
+- 海盗炮塔 Pirate Cannon Tower | 召唤:召唤海盗炮塔 Conjure Pirate Cannon Tower（海盗契约(T0)） | 城战器具 | 90命/3防/1抗/3状抗 | 造价140产+110金 维护20金 | The Silver Seas 白银之海
+- 光辉守卫 Radiant Guardian | 其他 | 神族/巨龙/魔法起源/护盾单位 | 95命/7防/2抗/3状抗 | 造价220产+140金 维护20金 | Ways of War 战争之道
+- 河巨魔 River Troll | 其他 | 散兵单位 | 105命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 剑齿虎 Sabertooth | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/斗士单位 | 95命/3防/2抗/3状抗 | 造价220产+140金 维护20金 | Primal Fury 原初之怒
+- 沙蝎 Sand Scorpion | 召唤:召唤沙蝎 Summon Sand Scorpion（沙地潜行者魔典(T2)） | 动物/护盾单位 | 100命/7防/2抗/3状抗 | 造价220产+140金 维护20金 | Rise from Ruin 废墟崛起
+- 餍满诱拐者塔楼 Satiated Abductor Tower | 其他 | *漂浮/魔法起源/塔楼 | 90命/3防/3抗/3状抗 | 造价120产+100金 维护20金 | Eldritch Realms 诡秘领域
+- 海马 Seamare | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/魔法起源/冲击单位 | 100命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | The Silver Seas 白银之海
+- 暗影 Shade | 魔典:暗影魔典(T2) | 散兵单位 | 95命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | Ways of War 战争之道
+- 银弹射手 Silvershot | 文化:重商-男爵领地 | 候选骑兵/远程单位 | 85命/2防/2抗/3状抗 | 造价220产+140金 维护20金 | The Silver Seas 白银之海
+- 吟游诗人 Skald | 魔典:杀戮魔典(T2) | 地狱恶魔/支援单位 | 80命/2防/4抗/5状抗 | 造价220产+140金 维护20金 | 本体
+- 蠕行体 Slither | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/巨龙/散兵单位 | 95命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | Dragon Dawn 龙之黎明
+- 霜雪之灵 Snow Spirit | 召唤:召唤元素 Summon Elemental（地卜魔典(T3)） | 元素/*漂浮/魔法战士单位/魔法起源 | 95命/3防/4抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 破法者 Spellbreaker | 文化:神奥-调谐 | 战斗法师单位/候选骑兵 | 75命/1防/3抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 织法者 Spellweaver | 文化:神奥-潜能 | 战斗法师单位/候选骑兵 | 75命/1防/3抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 灵魂之狼 Spirit Wolf | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/灵体/魔法战士单位/魔法起源 | 90命/3防/3抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 春之仙灵 Spring Fairy | 其他 | 仙灵/*飞行/魔法起源/支援单位 | 80命/2防/4抗/5状抗 | 造价220产+140法力 维护20金 | 本体
+- 岩石之灵 Stone Spirit | 召唤:召唤元素 Summon Elemental（地卜魔典(T3)） | 元素/*漂浮/魔法起源/护盾单位 | 100命/6防/3抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 石墙 Stone Wall | 其他 | 塔楼 | 100命/4防/3抗/3状抗 | 造价220产+140金 维护20金 | Giant Kings 巨人国王
+- 风暴之灵 Storm Spirit | 召唤:召唤元素 Summon Elemental（地卜魔典(T3)） | 元素/*漂浮/魔法起源/冲击单位 | 95命/4防/3抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 夏之仙灵 Summer Fairy | 其他 | 仙灵/*飞行/魔法起源/支援单位 | 80命/2防/4抗/5状抗 | 造价220产+140法力 维护20金 | 本体
+- 召唤师 Summoner | 文化:神奥-召唤 | 候选骑兵/支援单位 | 80命/2防/4抗/5状抗 | 造价220产+140金 维护20金 | 本体
+- 剑客 Swashbuckler | 魔典:海盗魔典(T2) | 散兵单位 | 90命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | The Silver Seas 白银之海
+- 诱惑者 Temptress | 魔典:燃烧热情魔典(T2) | 魔法战士单位 | 90命/3防/4抗/3状抗 | 造价220产+140金 维护20金 | Secrets of the Archmages 大法师之秘
+- 雷霆鸟 Thunderbird | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/战斗法师单位/*飞行 | 75命/1防/3抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 潮汐之灵 Tide Spirit | 召唤:召唤元素 Summon Elemental（地卜魔典(T3)） | 元素/斗士单位/*漂浮/魔法起源 | 110命/3防/3抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 狂野图腾 Totem of the Wild | 召唤:狂野图腾 Totem of the Wild（活力魔典(T3)） | 塔楼 | 80命/4防/2抗/3状抗 | 造价120产+100金 维护20金 | 本体
+- 投石机 Trebuchet | 其他 | 城战器具 | 35命/2防/2抗/3状抗 | 造价140产+110金 维护20金 | 本体
+- 暴君骑士 Tyrant Knight | 文化:黑暗-暴政教派 | 骑兵/冲击单位 | 100命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 幽影主宰 Umbral Juggernaut | 召唤:召唤幽影主宰 Summon Umbral Juggernaut（诡异协议(T0)） | 魔法起源/冲击单位/幽影恶魔 | 100命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | Eldritch Realms 诡秘领域
+- 独角兽 Unicorn | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/骑兵/神族/魔法起源/冲击单位 | 90命/3防/3抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 吸血蜘蛛女族长 Vampire Spider Matriarch | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/斗士单位/蜘蛛 | 90命/3防/1抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 戒卫 Vigil | 召唤:召唤戒卫 Summon Vigil（美德魔典(T2)） | 战斗法师单位/神族/*飞行/魔法起源 | 75命/1防/3抗/3状抗 | 造价220产+140金 维护20金 | Archon Prophecy 执政官预言
+- 战争魔像 War Golem | 召唤:召唤战争魔像 Summon War Golem（军阀魔典(T3)） | 构装体/地狱恶魔/魔法战士单位/魔法起源 | 90命/4防/3抗/3状抗 | 造价220产+140金 维护20金 | Rise from Ruin 废墟崛起
+- 战誓者 Warbound | 文化:负誓者-争斗 | 冲击单位 | 100命/4防/2抗/3状抗 | 造价220产+140金 维护20金 | Ways of War 战争之道
+- 守望者 Watcher | 召唤:召唤守望者 Summon Watcher（占测魔典(T2)） | 战斗法师单位/灵体/*漂浮/魔法起源 | 75命/1防/3抗/3状抗 | 造价220产+140金 维护20金 | 本体
+- 冬之仙灵 Winter Fairy | 其他 | 战斗法师单位/仙灵/*飞行/魔法起源 | 75命/1防/3抗/3状抗 | 造价220产+140法力 维护20金 | 本体
+- 火焰幼龙 Young Fire Dragon | 召唤:呼唤青年龙 Call young Dragon | 巨龙/进化/*飞行/神话单位 | 135命/5防/3抗/3状抗 | 造价240产+160金 维护20金 | Dragon Dawn 龙之黎明
+- 寒霜幼龙 Young Frost Dragon | 召唤:呼唤青年龙 Call young Dragon | 巨龙/进化/*飞行/神话单位 | 135命/5防/3抗/3状抗 | 造价240产+160金 维护20金 | Dragon Dawn 龙之黎明
+- 黄金幼龙 Young Golden Dragon | 召唤:呼唤青年龙 Call young Dragon | 巨龙/进化/*飞行/神话单位 | 135命/5防/3抗/3状抗 | 造价240产+160金 维护20金 | Dragon Dawn 龙之黎明
+- 黑曜石幼龙 Young Obsidian Dragon | 召唤:呼唤青年龙 Call young Dragon | 巨龙/进化/*飞行/神话单位 | 135命/5防/3抗/3状抗 | 造价240产+160金 维护20金 | Dragon Dawn 龙之黎明
+- 风神射手 Zephyr Archer | 魔典:疾风魔典(T2) | 远程单位 | 85命/2防/2抗/3状抗 | 造价220产+140金 维护20金 | 本体
+
+## T4
+- 诅咒诡术师 Accursed Trickster | 召唤:恶魔召唤 Demonic Summoning（恶魔之门魔典(T4)） | 受诅恶魔/战斗法师单位/魔法起源 | 95命/2防/4抗/7状抗 | 造价300产+200金 维护30金+3帝权 | Ways of War 战争之道
+- 骨龙 Bone Dragon | 其他 | 巨龙/*飞行/魔法起源/神话单位/亡灵 | 140命/7防/5抗/7状抗 | 造价210产+75魂 维护30金+3帝权 | 本体
+- 混沌吞食者 Chaos Eater | 召唤:恶魔召唤 Demonic Summoning（恶魔之门魔典(T4)） | 战斗法师单位/地狱恶魔/魔法起源 | 110命/3防/5抗/7状抗 | 造价300产+200法力 维护30金+3帝权 | 本体
+- 恐熊 Dire Bear | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/斗士单位 | 130命/5防/2抗/7状抗 | 造价120产+100金 维护30金+3帝权 | Empires & Ashes 帝国与灰烬
+- 灾祸法师 Direcaster | 其他 | 战斗法师单位/魔法起源/企鹅/幽影恶魔 | 95命/2防/4抗/7状抗 | 造价300产+200金 维护30金+3帝权 | Eldritch Realms 诡秘领域
+- 轮回德鲁伊 Druid of the Cycle | 魔典:轮回魔典(T3) | 植物/支援单位 | 100命/3防/5抗/9状抗 | 造价300产+200金 维护30金+3帝权 | 本体
+- 碎地引擎 Earthshatter Engine | 其他 | 城战器具 | 120命/5防/3抗/7状抗 | 造价300产+200金 维护30金+3帝权 | 本体
+- 缠绕灾厄 Entwined Scourge | 召唤:森林苏醒 Awaken the Forest（自然之怒魔典(T4)） | 战斗法师单位/植物 | 105命/2防/4抗/7状抗 | 造价300产+200金 维护30金+3帝权 | 本体
+- 优良楷模 Exemplar | 魔典:无上魔典(T4) | 骑兵/*飞行/护盾单位 | 120命/8防/3抗/7状抗 | 造价300产+200金 维护30金+3帝权 | 本体
+- 火焰巨人 Fire Giant | 其他 | 神话单位 | 150命/7防/4抗/7状抗 | 造价330产+250金 维护30金+3帝权 | 本体
+- 湮裂蠕虫 Fractured Worm | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/灵体/冲击单位 | 120命/5防/5抗/7状抗 | 造价300产+200金 维护30金+3帝权 | Rise from Ruin 废墟崛起
+- 冰霜巨人 Frost Giant | 召唤:召唤寒霜巨人 Summon Frost Giant（幽寒魔典(T3)） | 神话单位 | 150命/7防/4抗/7状抗 | 造价330产+250金 维护30金+3帝权 | 本体
+- 地脉法师 Geomancer | 魔典:地卜魔典(T3) | 战斗法师单位 | 90命/2防/4抗/7状抗 | 造价300产+200金 维护30金+3帝权 | Giant Kings 巨人国王
+- 重装大炮 Great Bombard | 其他 | 城战器具 | 100命/3防/3抗/7状抗 | 造价300产+200金 维护30金+3帝权 | Empires & Ashes 帝国与灰烬
+- 猎人蜘蛛女族长 Hunter Spider Matriarch | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/斗士单位/蜘蛛 | 125命/4防/2抗/7状抗 | 造价300产+200金 维护30金+3帝权 | 本体
+- 寒冰蜘蛛女族长 Ice Spider Matriarch | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/元素/魔法战士单位/蜘蛛 | 110命/4防/4抗/7状抗 | 造价300产+200金 维护30金+3帝权 | 本体
+- 地狱主宰 Infernal Juggernaut | 召唤:恶魔召唤 Demonic Summoning（恶魔之门魔典(T4)） | 动物/地狱恶魔/魔法起源/冲击单位 | 130命/5防/3抗/7状抗 | 造价300产+200金 维护30金+3帝权 | Primal Fury 原初之怒
+- 甲铁 Ironclad | 魔典:无畏魔典(T3) | 构装体/神话单位 | 110命/6防/4抗/7状抗 | 造价300产+200金 维护30金+3帝权 | Empires & Ashes 帝国与灰烬
+- 骑士 Knight（knight） | 文化:封建-帝君 | 骑兵/冲击单位 | 120命/5防/3抗/7状抗 | 造价300产+200金 维护30金+3帝权 | 本体
+- 骑士 Knight（knight） | 文化:封建-世家 | 骑兵/冲击单位 | 120命/5防/3抗/7状抗 | 造价300产+200金 维护30金+3帝权 | 本体
+- 克拉肯 Kraken | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/神话单位 | 140命/6防/6抗/7状抗 | 造价330产+250金 维护30金+3帝权 | 本体
+- Krazura Crystal | 其他 | 塔楼 | 120命/3防/5抗/7状抗 | 造价140产+110金 维护30金+3帝权 | Empires & Ashes 帝国与灰烬
+- 利塞罗石怪 - 宝石法师 Lithorine Gemcaster | 魔典:水晶契约(T0) | 战斗法师单位/元素/魔法起源 | 95命/2防/4抗/7状抗 | 造价300产+200法力 维护30金+3帝权 | Giant Kings 巨人国王
+- 活体迷雾 Living Fog | 召唤:召唤活体迷雾 Summon Living Fog（湮灭魔典(T4)） | 灵体/*漂浮/魔法起源/神话单位 | 130命/7防/5抗/7状抗 | 造价300产+200金 维护30金+3帝权 | 本体
+- 法师之厄 Mage Bane | 召唤:法师之厄仪式 Mage Bane Ritual | 灵体/*漂浮/魔法起源/神话单位 | 140命/4防/7抗/7状抗 | 造价330产+250金 维护30金+3帝权 | 本体
+- 拟态镜像 Mirror Mimic | 召唤:召唤拟态镜像 Summon Mirror Mimic（星镜魔典(T4)） | 魔法起源/神话单位 | 120命/4防/5抗/7状抗 | 造价300产+200金 维护30金+3帝权 | 本体
+- 月亮守卫 Moon Guardian | 其他 | 动物/*飞行/神话单位 | 130命/6防/6抗/7状抗 | 造价330产+250金 维护30金+3帝权 | Secrets of the Archmages 大法师之秘
+- 神谕者 Oracle | 魔典:预言魔典(T3) | 支援单位 | 100命/3防/5抗/9状抗 | 造价300产+200金 维护30金+3帝权 | Archon Prophecy 执政官预言
+- 痛苦使者 Pain Bringer | 魔典:折磨魔典(T3) | 神话单位 | 140命/5防/5抗/7状抗 | 造价300产+200金 维护30金+3帝权 | Thrones of Blood 鲜血王座
+- 相位猛兽 Phase Beast | 召唤:召唤相位猛兽 Summon Phase Beast（传送魔典(T3)） | 动物/灵体/魔法起源/冲击单位 | 120命/4防/3抗/7状抗 | 造价300产+200金 维护30金+3帝权 | 本体
+- 凤凰 Phoenix | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/元素/*飞行/魔法战士单位 | 110命/4防/4抗/7状抗 | 造价300产+200金 维护30金+3帝权 | 本体
+- 织法祭司 Priest of the Weave | 魔典:织网者魔典(T3) | 支援单位 | 100命/3防/5抗/9状抗 | 造价300产+200金 维护30金+3帝权 | Secrets of the Archmages 大法师之秘
+- 薪火骑士团 Pyre Templar | 魔典:净化烈焰魔典(T3) | 长柄武器单位 | 110命/5防/3抗/7状抗 | 造价300产+200金 维护30金+3帝权 | Eldritch Realms 诡秘领域
+- 正义判官 Righteous Judge | 其他 | 神族/巨龙/魔法起源/神话单位 | 140命/5防/6抗/7状抗 | 造价330产+250金 维护30金+3帝权 | Ways of War 战争之道
+- 岩石巨人 Rock Giant | 召唤:召唤岩石巨人 Summon Rock Giant（驭土魔典(T3)） | 神话单位 | 150命/7防/4抗/7状抗 | 造价330产+250金 维护30金+3帝权 | 本体
+- 玫瑰骑士 Rose Knight | 其他 | 骑兵/冲击单位/亡灵 | 120命/6防/2抗/7状抗 | 造价300产+200金 维护30金+3帝权 | Thrones of Blood 鲜血王座
+- 彷徨熔炉 Roving Furnace | 其他 | 构装体/冲击单位 | 120命/6防/2抗/7状抗 | 造价220产+140金 维护30金+3帝权 | Empires & Ashes 帝国与灰烬
+- 沙虫 Sand Worm | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/冲击单位 | 130命/5防/3抗/7状抗 | 造价300产+200金 维护30金+3帝权 | Rise from Ruin 废墟崛起
+- 先知食人魔 Seer Ogre | 其他 | 支援单位 | 100命/3防/5抗/9状抗 | 造价300产+200金 维护30金+3帝权 | Giant Kings 巨人国王
+- 风暴巨人 Storm Giant | 其他 | 神话单位 | 150命/7防/4抗/7状抗 | 造价330产+250金 维护30金+3帝权 | 本体
+- 风暴符文蟹 Storm Rune Crab | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/护盾单位 | 120命/8防/3抗/7状抗 | 造价300产+200金 维护30金+3帝权 | The Silver Seas 白银之海
+- 风暴使者 Stormbringer | 魔典:风暴眷族魔典(T4) | 魔法战士单位 | 105命/4防/4抗/7状抗 | 造价300产+200金 维护30金+3帝权 | Primal Fury 原初之怒
+- 制压者 Subjugator | 魔典:征服魔典(T3) | 骑兵/冲击单位 | 120命/5防/3抗/7状抗 | 造价300产+200金 维护30金+3帝权 | 本体
+- 太阳守卫 Sun Guardian | 其他 | 动物/*飞行/神话单位 | 130命/6防/6抗/7状抗 | 造价330产+250金 维护30金+3帝权 | Secrets of the Archmages 大法师之秘
+- 沼巨魔 Swamp Troll | 其他 | 战斗法师单位 | 105命/2防/4抗/7状抗 | 造价300产+200金 维护30金+3帝权 | 本体
+- 泰坦 Titan | 其他 | 神族/魔法起源/神话单位 | 140命/6防/5抗/7状抗 | 造价300产+200金 维护30金+3帝权 | Archon Prophecy 执政官预言
+- 训练师食人魔 Trainer Ogre | 其他 | 神话单位 | 130命/5防/5抗/7状抗 | 造价300产+200金 维护30金+3帝权 | Giant Kings 巨人国王
+- 转化师 Transmuter | 魔典:变化魔典(T3) | 战斗法师单位 | 95命/2防/4抗/7状抗 | 造价300产+200金 维护30金+3帝权 | 本体
+- 巨魔国王 Troll King | 其他 | 神话单位 | 130命/5防/5抗/7状抗 | 造价300产+200金 维护30金+3帝权 | Giant Kings 巨人国王
+- 幽影夫人 Umbral Mistress | 召唤:召唤幽影夫人 Summon Umbral Mistress（腐坏魔典(T3)） | 魔法起源/神话单位/幽影恶魔 | 110命/3防/5抗/7状抗 | 造价300产+200金 维护30金+3帝权 | Eldritch Realms 诡秘领域
+- 亡灵泰坦 Undead Titan | 其他 | 魔法起源/神话单位/亡灵 | 140命/6防/5抗/7状抗 | 造价210产+75魂 维护30金+3帝权 | Archon Prophecy 执政官预言
+- 战嗣 Warbreed | 魔典:毁灭魔典(T3) | 冲击单位 | 130命/5防/2抗/7状抗 | 造价300产+200金 维护30金+3帝权 | 本体
+- 军阀 Warlord | 魔典:军阀魔典(T3) | 神话单位 | 140命/5防/6抗/7状抗 | 造价300产+200金 维护30金+3帝权 | Rise from Ruin 废墟崛起
+- 驭涛者 Wavemaster | 魔典:海盗契约(T0) | 魔法战士单位 | 110命/4防/4抗/7状抗 | 造价300产+200金 维护30金+3帝权 | The Silver Seas 白银之海
+- 织网蜘蛛女族长 Weaver Spider Matriarch | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/远程单位/蜘蛛 | 105命/3防/3抗/7状抗 | 造价300产+200金 维护30金+3帝权 | Secrets of the Archmages 大法师之秘
+- 白狼 White Wolf | 召唤:呼唤高级动物 Call Greater Animal（活力魔典(T3)） | 动物/斗士单位 | 130命/5防/3抗/7状抗 | 造价300产+200金 维护30金+3帝权 | 本体
+- 驯兽食人魔 Wrangler Ogre | 其他 | 支援单位 | 100命/3防/5抗/9状抗 | 造价300产+200金 维护30金+3帝权 | Giant Kings 巨人国王
+
+## T5
+- 骇人雾灵 Abominable Mistling | 召唤:图莉亚娜的扭曲术 Thulyana's Contortion | 仙灵/神话单位 | 150命/7防/7抗/11状抗 | 造价400产+300金 维护60金+7帝权 | Secrets of the Archmages 大法师之秘
+- 远古霜冻鳐鱼 Ancient Hoarfrost Manta | 召唤:召唤远古霜冻鳐鱼 Summon Ancient Hoarfrost Manta（永冻冰霜魔典(T4)） | 动物/元素/*漂浮/魔法起源/神话单位 | 150命/7防/7抗/11状抗 | 造价400产+300金 维护60金+7帝权 | The Silver Seas 白银之海
+- 星神 Astra | 召唤:召唤星神 Summon Astra（仲裁官魔典(T4)） | 神族/*飞行/魔法起源/神话单位 | 150命/7防/6抗/11状抗 | 造价400产+300金 维护60金+7帝权 | Archon Prophecy 执政官预言
+- 宇宙化身 Avatar of the Cosmos | 召唤:召唤宇宙化身 Summon Avatar of the Cosmos（宇宙魔典(T5)） | 元素/*漂浮/魔法起源/神话单位 | 150命/7防/7抗/11状抗 | 造价400产+400金 维护60金+7帝权 | Secrets of the Archmages 大法师之秘
+- 巴洛炎魔 Balor | 召唤:召唤巴洛炎魔 Summon Balor（恶魔之门魔典(T4)） | *飞行/地狱恶魔/魔法起源/神话单位 | 160命/7防/6抗/11状抗 | 造价400产+300金 维护60金+7帝权 | 本体
+- 鲜血使徒 Blood Exarch | 召唤:召唤鲜血使徒 Summon Blood Exarch（绯红统御魔典(T4)） | 魔法起源/神话单位/亡灵 | 160命/6防/6抗/11状抗 | 造价400产+300金 维护60金+7帝权 | Thrones of Blood 鲜血王座
+- 灾祸巨龙 Calamity Dragon | 召唤:召唤灾祸巨龙 Summon Calamity Dragon（灾祸魔典(T4)） | 受诅恶魔/巨龙/*飞行/魔法起源/神话单位 | 150命/6防/7抗/11状抗 | 造价400产+400金 维护60金+7帝权 | Ways of War 战争之道
+- 巨像企鹅 Colossal Penguin | 召唤:尼缪的失败 Nimue's Failure | 动物/神话单位/企鹅 | 190命/7防/7抗/11状抗 | 造价300产+300法力 维护60金+7帝权 | Secrets of the Archmages 大法师之秘
+- 秘会议长 Council Prolocutor | 其他 | 元素/*漂浮/神话单位 | 160命/6防/7抗/11状抗 | 造价300产+300法力 维护60金+7帝权 | Giant Kings 巨人国王
+- 大地泰坦 Earth Titan | 召唤:泰坦现世 Call the Titan of the Earth（造化魔典(T5)） | 元素/*漂浮/魔法起源/神话单位 | 160命/6防/6抗/11状抗 | 造价400产+300金 维护60金+7帝权 | 本体
+- 堕落天使 Fallen Angel | 召唤:召唤堕落天使 Summon Fallen Angel（亡灵魔典(T4)） | *飞行/魔法起源/神话单位/亡灵 | 150命/6防/6抗/11状抗 | 造价280产+100魂 维护60金+7帝权 | Archon Prophecy 执政官预言
+- 仙灵惊惧 Feylor | 召唤:贝贝多的愚行 Belbedor's Folly | 仙灵/*飞行/地狱恶魔/魔法起源/神话单位 | 150命/7防/7抗/11状抗 | 造价400产+300金 维护60金+7帝权 | Secrets of the Archmages 大法师之秘
+- 火焰龙 Fire Dragon | 召唤:召唤烈焰化身 Summon Flame Incarnate（混沌引导魔典(T4)） | 巨龙/*飞行/神话单位 | 175命/8防/6抗/11状抗 | 造价400产+400金 维护60金+7帝权 | 本体
+- 湮裂裂隙 Fracture（fracture） | 其他 | *漂浮/神话单位 | 150命/7防/7抗/11状抗 | 造价400产+300金 维护60金+7帝权 | Rise from Ruin 废墟崛起
+- 湮裂裂隙 Fracture（fracture） | 其他 | *漂浮/神话单位 | 150命/7防/7抗/11状抗 | 造价400产+300金 维护60金+7帝权 | Rise from Ruin 废墟崛起
+- 湮裂裂隙 Fracture（fracture） | 其他 | *漂浮/神话单位 | 150命/7防/7抗/11状抗 | 造价400产+300金 维护60金+7帝权 | Rise from Ruin 废墟崛起
+- 湮裂巨龙 Fractured Dragon | 其他 | 巨龙/灵体/*飞行/神话单位 | 160命/7防/12抗/11状抗 | 造价400产+400金 维护60金+7帝权 | Rise from Ruin 废墟崛起
+- 寒霜龙 Frost Dragon | 其他 | 巨龙/*飞行/神话单位 | 175命/8防/6抗/11状抗 | 造价400产+400金 维护60金+7帝权 | 本体
+- 幽灵船 Ghost Ship | 其他 | 灵体/神话单位/亡灵 | 160命/6防/6抗/11状抗 | 造价400产+400金 维护60金+7帝权 | 本体
+- 黄金龙 Golden Dragon | 其他 | 巨龙/*飞行/神话单位 | 175命/8防/6抗/11状抗 | 造价400产+400金 维护60金+7帝权 | Dragon Dawn 龙之黎明
+- 黄金魔像 Golden Golem | 魔典:黄金国度魔典(T4) | 构装体/神话单位 | 150命/7防/7抗/11状抗 | 造价400产+400金 维护60金+7帝权 | 本体
+- 战争先驱 Herald of War | 召唤:召唤烈焰化身 Summon Flame Incarnate（混沌引导魔典(T4)） | 元素/*漂浮/魔法起源/神话单位 | 160命/6防/10抗/11状抗 | 造价400产+300金 维护60金+7帝权 | Empires & Ashes 帝国与灰烬
+- 角神 Horned God | 召唤:召唤角神 Summon Horned God（自然之怒魔典(T4)） | 仙灵/魔法起源/神话单位/植物 | 160命/5防/7抗/11状抗 | 造价400产+300金 维护60金+7帝权 | 本体
+- 卡拉赫 Karagh | 其他 | 神话单位 | 160命/6防/5抗/11状抗 | 造价400产+300金 维护60金+7帝权 | 本体
+- 利塞罗石怪 - 幻象 Lithorine Simulacrum | 魔典:水晶契约(T0) | 元素/魔法起源/神话单位 | 150命/6防/7抗/11状抗 | 造价300产+300法力 维护60金+7帝权 | Giant Kings 巨人国王
+- 失落法师 Lost Wizard | 其他 | 灵体/*漂浮/魔法起源/神话单位 | 160命/6防/7抗/11状抗 | 造价400产+400金 维护60金+7帝权 | 本体
+- 黑曜石龙 Obsidian Dragon | 其他 | 巨龙/*飞行/神话单位 | 175命/8防/6抗/11状抗 | 造价400产+400金 维护60金+7帝权 | Dragon Dawn 龙之黎明
+- 原初蛇怪 Primordial Basilisk | 其他 | 动物/战斗法师单位/魔法起源 | 115命/3防/5抗/11状抗 | 造价400产+400金 维护60金+7帝权 | Giant Kings 巨人国王
+- 原初血背兽 Primordial Bloodback | 其他 | 动物/魔法起源/冲击单位 | 170命/8防/5抗/11状抗 | 造价400产+400金 维护60金+7帝权 | Giant Kings 巨人国王
+- 原初火焰飞蛾 Primordial Pyremoth | 其他 | 动物/*飞行/魔法起源/支援单位 | 120命/4防/6抗/13状抗 | 造价400产+300金 维护60金+7帝权 | Giant Kings 巨人国王
+- 起源魔像 Progenitor Golem | 召唤:召唤起源魔像 Summon Progenitor Golem | 构装体/*飞行/神话单位 | 150命/6防/7抗/11状抗 | 造价400产+300金 维护60金+7帝权 | Empires & Ashes 帝国与灰烬
+- 繁盛巨龙 Prosperity Dragon | 召唤:召唤繁盛巨龙 Summon Prosperity Dragon（繁盛魔典(T4)） | 神族/巨龙/*飞行/魔法起源/神话单位 | 150命/6防/7抗/11状抗 | 造价400产+400金 维护60金+7帝权 | Ways of War 战争之道
+- 死神 Reaper | 召唤:召唤死神 Summon Reaper（死神魔典(T4)） | 灵体/*漂浮/魔法起源/神话单位/亡灵 | 150命/6防/6抗/11状抗 | 造价280产+100魂 维护60金+7帝权 | 本体
+- 秋之灾厄 Scourge of Autumn | 其他 | 仙灵/魔法起源/神话单位 | 150命/5防/5抗/11状抗 | 造价400产+300金 维护60金+7帝权 | Eldritch Realms 诡秘领域
+- 春之灾厄 Scourge of Spring | 其他 | 仙灵/魔法起源/神话单位 | 150命/5防/5抗/11状抗 | 造价400产+300金 维护60金+7帝权 | Eldritch Realms 诡秘领域
+- 夏之灾厄 Scourge of Summer | 其他 | 仙灵/魔法起源/神话单位 | 150命/5防/5抗/11状抗 | 造价400产+300金 维护60金+7帝权 | Eldritch Realms 诡秘领域
+- 冬之灾厄 Scourge of Winter | 其他 | 仙灵/魔法起源/神话单位 | 150命/5防/5抗/11状抗 | 造价400产+300金 维护60金+7帝权 | Eldritch Realms 诡秘领域
+- 阻断魔像 Severing Golem | 魔典:阻断魔典(T4) | 构装体/神话单位 | 140命/5防/6抗/11状抗 | 造价400产+400金 维护60金+7帝权 | Empires & Ashes 帝国与灰烬
+- 重击神龛 Shrine of Smiting | 魔典:神尊魔典(T4) | 神族/构装体/*漂浮/神话单位 | 140命/5防/7抗/11状抗 | 造价400产+300金 维护60金+7帝权 | 本体
+- 幽影暴君 Umbral Tyrant | 其他 | *漂浮/魔法起源/神话单位/幽影恶魔 | 150命/6防/6抗/11状抗 | 造价400产+300金 维护60金+7帝权 | Eldritch Realms 诡秘领域
